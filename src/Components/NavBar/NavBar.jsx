@@ -8,7 +8,7 @@ const NavBar = () => {
         <>
           <a className="d-flex align-items-center justify-content-center m-4 text-decoration-none text-black brand" href="">Ayelen Galvan</a>
 
-          <nav className="navbar navbar-expand-lg navbar-light">
+          <nav className="navbar navbar-expand-lg navbar-light nav">
             <div className="container-fluid">
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
