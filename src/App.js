@@ -1,5 +1,6 @@
 import './App.css';
-import NavBar from "./Components/NavBar/NavBar"
+import NavBar from "./Components/NavBar/NavBar"; 
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';'; 
 
 function App() {
 
@@ -7,8 +8,11 @@ const arrayElementsNavBar = ['Inicio','Ropa de dama','Ropa de hombre','Accesorio
 
   return (
     <>
+    
     <NavBar arrayElementsNavBar={arrayElementsNavBar} />
 
+    <ItemListContainer />
+    
     </>
   );
 }
