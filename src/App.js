@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from "./Components/NavBar/NavBar"; 
 import ItemListContainer from "./Components/Cart/ItemListContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemCount from './Components/Count/ItemCount';
 
 function App() {
 
@@ -13,12 +14,15 @@ const arrayElementsNavBar = [{item: 'Inicio', enlace:'/home'},
 
 const brand = [{nombre:'Ayelen Galvan', enlace:'/contacto'}];
 
+const stock = '4'
+
   return (
     <>
-    
-    <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
+    <ItemCount stock={stock} /> 
+      {/* <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
+      
 
-    <ItemListContainer greeting='' />
+      <ItemListContainer greeting='' /> */}
     
     </>
   );
