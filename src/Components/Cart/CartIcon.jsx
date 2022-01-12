@@ -1,6 +1,4 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
 import { BiCart } from 'react-icons/bi';
 
 class CartIcon extends React.Component {

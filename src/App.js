@@ -1,17 +1,24 @@
 import './App.css';
 import NavBar from "./Components/NavBar/NavBar"; 
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';'; 
+import ItemListContainer from "./Components/Cart/ItemListContainer";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-const arrayElementsNavBar = ['Inicio','Ropa de dama','Ropa de hombre','Accesorios','Contacto']
+const arrayElementsNavBar = [{item: 'Inicio', enlace:'/home'},
+                             {item: 'Ropa de dama', enlace:'/dama'},
+                             {item: 'Ropa de hombre', enlace:'/hombre '},
+                             {item: 'Accesorios', enlace:'/accesorios'},
+                             {item: 'Contacto', enlace:'/contacto'}];
+
+const brand = [{nombre:'Ayelen Galvan', enlace:'/contacto'}];
 
   return (
     <>
     
-    <NavBar arrayElementsNavBar={arrayElementsNavBar} />
+    <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
 
-    <ItemListContainer />
+    <ItemListContainer greeting='' />
     
     </>
   );
