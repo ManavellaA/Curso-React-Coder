@@ -20,9 +20,9 @@ const stock = 1
   return (
     <>
 
-    <Prueba />
+    {/* <Prueba /> */}
 
-    {/* <ItemCount stock={stock} />  */}
+    <ItemCount stock={stock} /> 
       {/* <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
       
 
