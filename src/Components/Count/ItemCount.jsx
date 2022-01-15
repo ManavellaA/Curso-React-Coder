@@ -4,11 +4,11 @@ import AddOn from '../Cart/AddOn';
 
 const ItemCount = ({stock, inicial, nombre}) => {
 
-    const [contador, setContador] = useState(inicial);
+    const [contador, setContador] = useState(stock <= 0 ? 0 : inicial);
     const ClickAdd = () => setContador(contador < stock ? contador + 1 : contador);
     const ClickSubtract = () => setContador(contador > inicial ? contador - 1 : inicial);
     const StockControl = stock <= 0 ? 'Sin Stock' : contador;
-    const ClickAddOn = () => stock >= 0 ? (<AddOn AddOfCart={{nombre, contador}} />) : alert('No hay stock del producto seleccionado'); 
+    const ClickAddOn = () => stock <= 0 ? alert('No hay stock del producto seleccionado') : AddOn({nombre, contador}); 
     
     return (
         <>
