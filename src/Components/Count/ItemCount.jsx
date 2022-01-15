@@ -1,14 +1,14 @@
 import React, {useState}  from 'react';
 import './ItemCount.css';
+import AddOn from '../Cart/AddOn';
 
 const ItemCount = ({stock, inicial, nombre}) => {
 
-    const arrayOfCart = []
     const [contador, setContador] = useState(inicial);
     const ClickAdd = () => setContador(contador < stock ? contador + 1 : contador);
     const ClickSubtract = () => setContador(contador > inicial ? contador - 1 : inicial);
     const StockControl = stock <= 0 ? 'Sin Stock' : contador;
-    const ClickAddOn = () => (arrayOfCart.push({nombre, contador}), console.log(arrayOfCart)); 
+    const ClickAddOn = () => stock >= 0 ? (<AddOn AddOfCart={{nombre, contador}} />) : alert('No hay stock del producto seleccionado'); 
     
     return (
         <>
