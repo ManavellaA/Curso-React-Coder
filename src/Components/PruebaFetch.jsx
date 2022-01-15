@@ -1,45 +1,44 @@
 import React, {useEffect, useState} from 'react'
 
-const Prueba = () => {
+    const Prueba = () => {
 
-    const [nombre, setNombre] = useState('....Cargando')
-        useEffect(() => {
-            fetch('https://www.breakingbadapi.com/api/characters/1')
-            .then(res => res.json())
-            .then(resJson => setNombre(resJson[0].name))
-            .catch(error => console.log(error))      
-        }, [])
+//     const [nombre, setNombre] = useState('....Cargando')
+//         useEffect(() => {
+//             fetch('src/stock.json')
+//             .then(res => res.json())
+//             .then(resJson => setNombre(resJson[0].name))      
+//         }, [])
     
+//     return (
+//         <div>
+//             {nombre}
+//         </div>
+//     )
+
+// }
+// export default Prueba
+
+    const [items, setItems] = useState([]);
+    useEffect(() => {
+        fetch('src/stock.json')
+            .then((res) => res.json())
+            .then((json) => {
+              setItems(json);
+              console.log(json);
+            });
+    }, []);
+
     return (
-        <div>
-            {nombre}
-        </div>
-    )
+        <>
+        <h1>prueba de promesas</h1>
+        {items.map(item => (
+          <p key={item.id}>{item.art}</p>
+        ))}
+        </>
+    );
+};
 
-}
-export default Prueba
-
-
-
-// fetch("https://fakestoreapi.com/products")
-// .then((res) => res.json())
-// .then((json) => {
-//   setItems(json);
-//   console.log(json);
-// });
-// }, []);
-
-// return (
-// <>
-// <h1>prueba de promesas</h1>
-// {items.map((item, key) => (
-//   <p key={item.id}>{item.title}</p>
-// ))}
-// </>
-// );
-// };
-
-// export default Promises;
+export default Prueba;
 
 
 

@@ -1,0 +1,24 @@
+{
+    "stockProducts": [
+      {
+        "id": "15987",
+        "art": "Remera",
+        "title": "Adidas",
+        "price": 1100,
+        "img":"url"
+      },
+      {
+        "id": "15987",
+        "art": "Pantalon",
+        "title": "Adidas",
+        "price": 1100,
+        "img":"url"
+      },
+      {
+        "id": "15987",
+        "art": "Pulsera",
+        "title": "Adidas",
+        "price": 1100,
+        "img":"url"
+      }
+]}
