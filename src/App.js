@@ -2,8 +2,6 @@ import './App.css';
 import NavBar from "./Components/NavBar/NavBar"; 
 import ItemListContainer from "./Components/Cart/ItemListContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from './Components/Count/ItemCount';
-import Prueba from './Components/PruebaFetch';
 
 function App() {
 
@@ -15,19 +13,19 @@ const arrayElementsNavBar = [{item: 'Inicio', enlace:'/home'},
 
 const brand = [{nombre:'Ayelen Galvan', enlace:'/contacto'}];
 
-const stock = 1
+const arrayOfProducts = [
+  {nombre:'Remera', stock:'3'},
+  {nombre:'Pantalon', stock:'5'},
+  {nombre:'Pulsera', stock:'0'},
+]
+
+const arrayOfCart = []
 
   return (
     <>
+      <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
 
-    {/* <Prueba /> */}
-
-    <ItemCount stock={stock} /> 
-      {/* <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
-      
-
-      <ItemListContainer greeting='' /> */}
-    
+      <ItemListContainer greeting='Hola Ivan' arrayOfProducts={arrayOfProducts} />
     </>
   );
 }
