@@ -1,14 +1,14 @@
 import React from 'react'
 import ItemCount from '../Count/ItemCount'
 
-const ItemListContainer = ({greeting, arrayOfProducts}) => {
+const ItemListContainer = ({greeting, arrayOfProducts, inicial}) => {
 
     
 
     return (
         <>
             <p> {greeting} </p>
-            {arrayOfProducts.map(item => <ItemCount stock={item.stock} nombre={item.nombre} inicial={1} />)}
+            {arrayOfProducts.map(item => <ItemCount stock={item.stock} nombre={item.nombre} inicial={inicial} />)}
         </>
     )
 }

@@ -19,13 +19,15 @@ const arrayOfProducts = [
   {nombre:'Pulsera', stock:'0'},
 ]
 
+const inicial=(1)
+
 const arrayOfCart = []
 
   return (
     <>
       <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
 
-      <ItemListContainer greeting='Hola Ivan' arrayOfProducts={arrayOfProducts} />
+      <ItemListContainer greeting='Hola Ivan' arrayOfProducts={arrayOfProducts} inicial={inicial} />
     </>
   );
 }
