@@ -17,7 +17,7 @@ const brand = [{nombre:'Ayelen Galvan', enlace:'/contacto'}];
 const arrayOfProducts = [
   {nombre:'Remera', id:'15946', precio:'900' , stock:'3'},
   {nombre:'Pantalon', id:'23456', precio:'1600' , stock:'5'},
-  {nombre:'Pulsera', id:'78258', precio:'400' , stock:'0'},
+  {nombre:'Pulsera', id:'78258', precio:'400' , stock:'0'}
 ]
 
 const inicial=(1)
@@ -26,11 +26,11 @@ const arrayOfCart = []
 
   return (
     <>
-      {/* <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
+      <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />
 
-      <ItemListContainer greeting='Hola Ivan' arrayOfProducts={arrayOfProducts} inicial={inicial} /> */}
+      <ItemListContainer greeting='Hola Ivan' arrayOfProducts={arrayOfProducts} inicial={inicial} />
     
-      <Prueba />
+      {/* <Prueba /> */}
     </>
   );
 }

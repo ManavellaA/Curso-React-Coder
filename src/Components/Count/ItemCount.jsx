@@ -13,8 +13,8 @@ const ItemCount = ({stock, inicial, nombre}) => {
     return (
         <>
          <div className="div__buttons">
-            <h1>{nombre}</h1>    
-            <h2>Unidades: {StockControl}</h2>  
+            <h1>{nombre}</h1>
+            <h2>Unidades: {StockControl}</h2>
             <div>
                 <button onClick={ClickSubtract} className="btn btn-success">-</button>
                 <button onClick={ClickAdd} className="btn btn-success">+</button>
