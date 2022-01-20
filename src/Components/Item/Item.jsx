@@ -14,20 +14,19 @@ const Item = ({items}) => {
     const ClickAddOn = () => items.stock <= 0 ? alert('No hay stock del producto seleccionado') : AddOn({nombre, marca, precio, contador}); 
 
     return (
-        <>
-            <div className="div__buttons">
-                <h1>{nombre}</h1>
-                <h3>{items.marca}</h3>
-                <h4>Precio: ${items.precio} </h4>
-                <h2>Unidades: {StockControl}</h2>
-                <div>
-                    <button onClick={ClickSubtract} className="btn btn-success">-</button>
-                    <button onClick={ClickAdd} className="btn btn-success">+</button>
+        <>{
+                <div className="div__buttons">
+                    <h1>{nombre}</h1>
+                    <h3>{items.marca}</h3>
+                    <h2>Unidades: {StockControl}</h2>
+                    <div>
+                        <button onClick={ClickSubtract} className="btn btn-success">-</button>
+                        <button onClick={ClickAddOn} className="btn btn-success">Agregar al Carrito</button>
+                        <button onClick={ClickAdd} className="btn btn-success">+</button>
+                    </div>
+                    <h4>Precio: ${items.precio} </h4>
                 </div>
-                <div>
-                    <button onClick={ClickAddOn} className="btn btn-success">Agregar al Carrito</button>
-                </div>
-            </div>
+            }
         </>
     )
 }

@@ -22,7 +22,8 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <>
-            <p> {greeting} </p>
+            <h1 className='d-flex align-self-center justify-content-center mt-3 mb-5' > {greeting} </h1>
+
             <ItemList Productos={arrayProductos} />
         </>
     )
