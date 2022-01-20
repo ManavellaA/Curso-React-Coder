@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
-// import ItemCount from '../Count/ItemCount'
-import ItemList from '../Items/ItemList'
+import React, {useState, useEffect} from 'react';
+import ItemList from './ItemList';
 
 const ItemListContainer = ({greeting}) => {
 
@@ -9,9 +8,9 @@ const ItemListContainer = ({greeting}) => {
     const promesaProductos = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve([
-              {id: 1, nombre: 'Remera', Marca:'Adidas' , Precio:1100 , stock: 10},
-              {id: 2, nombre: 'Pantalon', Marca:'Narrow' , Precio:2200 , stock: 2},
-              {id: 3, nombre: 'Pulsera', Marca:'Biju' , Precio:150 , stock: 0},
+              {id: 1, nombre: 'Remera', marca:'Adidas' , precio:1100 , stock: 10, inicial: 1},
+              {id: 2, nombre: 'Pantalon', marca:'Narrow' , precio:2200 , stock: 0, inicial: 1},
+              {id: 3, nombre: 'Pulsera', marca:'Biju' , precio:150 , stock: 4, inicial: 2},
             ]);
         }, 2000); 
     });
@@ -24,7 +23,6 @@ const ItemListContainer = ({greeting}) => {
     return (
         <>
             <p> {greeting} </p>
-            {/* <ItemCount stock={0} inicial={1} nombre={'Pantalon'} /> */}
             <ItemList Productos={arrayProductos} />
         </>
     )
