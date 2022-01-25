@@ -17,17 +17,18 @@ const ItemDetailConteiner = () => {
     });
     useEffect(() => {
         promesaProductos.then(res =>{
-            setGetItem(res.filter(item => item.id == 1));
+            let producto = res.filter(item => item.id == 1);
+            setGetItem(producto[0]);
         });
     },[]);
 
     return (
         <>
-            {getItem.length > 0 ?
+            {getItem.length == 0 ?
 
-                (getItem.map(element => <ItemDetail Items={element} />))
+                (<div className='loading show mt-5'><div className='spin'></div></div>)
                 :
-                <h1>...Loading...</h1>
+                (<div className='d-flex justify-content-center mt-5'> <ItemDetail Items={getItem} /> </div>)
             }
         </>
     )

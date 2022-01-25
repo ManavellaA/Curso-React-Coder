@@ -16,8 +16,8 @@ function App() {
 
   return (
     <>
-      {/* <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />  
-      <ItemListContainer greeting='Bienvenido' /> */}
+      <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />  
+      {/* <ItemListContainer greeting='Bienvenido' /> */}
       <ItemDetailContainer />
     </>
   );
