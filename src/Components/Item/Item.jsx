@@ -11,7 +11,8 @@ const Item = ({items}) => {
     const ClickAdd = () => setContador(contador < items.stock ? contador + 1 : contador);
     const ClickSubtract = () => setContador(contador > items.inicial ? contador - 1 : items.inicial);
     const StockControl = items.stock <= 0 ? 'Sin Stock' : contador;
-    const ClickAddOn = () => items.stock <= 0 ? alert('No hay stock del producto seleccionado') : AddOn({nombre, marca, precio, contador}); 
+    const ClickAddOn = () => AddOn({nombre, marca, precio, contador}); 
+    const disabledButton = items.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
 
     return (
         <>{
@@ -20,9 +21,9 @@ const Item = ({items}) => {
                     <h3>{items.marca}</h3>
                     <h2>Unidades: {StockControl}</h2>
                     <div>
-                        <button onClick={ClickSubtract} className="btn btn-success">-</button>
-                        <button onClick={ClickAddOn} className="btn btn-success">Agregar al Carrito</button>
-                        <button onClick={ClickAdd} className="btn btn-success">+</button>
+                        <button onClick={ClickSubtract} className={disabledButton}>-</button>
+                        <button onClick={ClickAddOn} className={disabledButton}>Agregar al Carrito</button>
+                        <button onClick={ClickAdd} className={disabledButton}>+</button>
                     </div>
                     <h4>Precio: ${items.precio} </h4>
                 </div>

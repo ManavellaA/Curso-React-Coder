@@ -23,7 +23,7 @@ const ItemDetailConteiner = () => {
         <>
             {getItem.length > 0 ?
 
-                <ItemDetail Items={getItem} />
+                (getItem.map(element => <ItemDetail Items={element} />))
                 :
                 <h1>...Loading...</h1>
             }
