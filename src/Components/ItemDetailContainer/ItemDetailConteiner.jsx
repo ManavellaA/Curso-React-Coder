@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail';
 
@@ -24,7 +23,7 @@ const ItemDetailConteiner = () => {
             setGetItem(producto[0]);
         });
     },[]);
-
+    
     return (
         <>
             {getItem.length === 0 ?
