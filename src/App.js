@@ -13,19 +13,37 @@ function App() {
                                {item: 'Accesorios', enlace:'/accesorios'},
                                {item: 'Contacto', enlace:'/contacto'}];
 
-  const brand = [{nombre:'Ayelen Galvan', enlace:'/contacto'}];
+  const brand = 'Ayelen Galvan'
 
   return (
     
-      <BrowserRouter>
+    // {/* <ItemDetailContainer /> */}
+    <BrowserRouter>
         
         <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />  
-        
+
         <Switch>
-        
-          <ItemListContainer greeting='Bienvenido' exact path="/" />
-          <ItemDetailContainer />
-        
+
+            <Route exact path="/"> 
+                <ItemListContainer greeting='Bienvenido a mi Tienda' />
+            </Route>
+
+            <Route exact path="/Ropa de Dama">
+                <ItemListContainer greeting='Ropa de Damas' />
+            </Route>
+
+            <Route exact path="/Ropa de Hombre">
+                <ItemListContainer greeting='Ropa de Hombres' />
+            </Route>
+
+            <Route exact path="/Accesorios">
+                <ItemListContainer greeting='Accesorios' />
+            </Route>
+
+            <Route exact path="/Contacto">
+              Contacto
+            </Route>
+
         </Switch>
       
       </BrowserRouter>
