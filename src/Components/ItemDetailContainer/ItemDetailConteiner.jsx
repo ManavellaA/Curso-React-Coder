@@ -15,6 +15,9 @@ const ItemDetailConteiner = () => {
               ]);
         }, 2000); 
     });
+
+// como no vimos todavia la clase de Routing para este desafio, dejo el item.id manual para buscar que producto quiero hacer el detail
+
     useEffect(() => {
         promesaProductos.then(res =>{
             let producto = res.filter(item => item.id === 1);
