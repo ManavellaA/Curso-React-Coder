@@ -17,14 +17,14 @@ const ItemDetailConteiner = () => {
     });
     useEffect(() => {
         promesaProductos.then(res =>{
-            let producto = res.filter(item => item.id == 1);
+            let producto = res.filter(item => item.id === 1);
             setGetItem(producto[0]);
         });
     },[]);
 
     return (
         <>
-            {getItem.length == 0 ?
+            {getItem.length === 0 ?
 
                 (<div className='loading show mt-5'><div className='spin'></div></div>)
                 :
