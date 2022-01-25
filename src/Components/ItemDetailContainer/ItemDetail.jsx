@@ -18,7 +18,7 @@ const ItemDetail = ({Items}) => {
             <div className="div__buttons">
                 <h1>{nombre}</h1>
                 <h3>{Items.marca}</h3>
-                <img src={Items.img} alt="" />
+                <img src={Items.img} alt={nombre} className='mt-3 mb-3'/>
                 <p>{Items.detalle}</p>
                 <h2>Unidades: {StockControl}</h2>
                 <div>
