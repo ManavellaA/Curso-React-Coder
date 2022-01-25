@@ -4,23 +4,29 @@ import ItemDetail from './ItemDetail';
 
 const ItemDetailConteiner = () => {
 
-  const [arrayProductos, setArrayProductos] = useState([]);  
-  
-    useEffect(() => {
-        
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200')
-        .then(res => res.json())
-        .then(function (res) {
-            console.log(res);
-        })
+    const [getItem, setGetItem] = useState([]);  
 
+    const promesaProductos = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve([
+              {id: 1, nombre: 'Camisa', marca:'Polo' , precio:4100 , stock: 10, inicial: 1, img: ''}
+            ]);
+        }, 2000); 
     });
+    useEffect(() => {
+        promesaProductos.then(res =>{
+            setGetItem(res);
+        });
+    },[]);
 
     return (
         <>
-            {/* <p>{arrayProductos}</p> */}
-            {/* <ItemDetail Productos={arrayProductos} /> */}
+            {getItem.length > 0 ?
 
+                <ItemDetail Items={getItem} />
+                :
+                <h1>...Loading...</h1>
+            }
         </>
     )
 };
