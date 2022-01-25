@@ -11,12 +11,14 @@ const ItemDetail = ({Items}) => {
   const ClickSubtract = () => setContador(contador > Items.inicial ? contador - 1 : Items.inicial);
   const StockControl = Items.stock <= 0 ? 'Sin Stock' : contador;
   const ClickAddOn = () => Items.stock <= 0 ? alert('No hay stock del producto seleccionado') : AddOn({nombre, marca, precio, contador}); 
-
+  
   return (
       <>{
             <div className="div__buttons">
                 <h1>{nombre}</h1>
                 <h3>{Items.marca}</h3>
+                <img src={Items.img} alt="" />
+                <p>{Items.detalle}</p>
                 <h2>Unidades: {StockControl}</h2>
                 <div>
                     <button onClick={ClickSubtract} className="btn btn-success">-</button>

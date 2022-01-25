@@ -16,18 +16,18 @@ const Item = ({items}) => {
 
     return (
         <>{
-                <div className="div__buttons">
-                    <h1>{nombre}</h1>
-                    <h3>{items.marca}</h3>
-                    <h2>Unidades: {StockControl}</h2>
-                    <div>
-                        <button onClick={ClickSubtract} className={disabledButton}>-</button>
-                        <button onClick={ClickAddOn} className={disabledButton}>Agregar al Carrito</button>
-                        <button onClick={ClickAdd} className={disabledButton}>+</button>
-                    </div>
-                    <h4>Precio: ${items.precio} </h4>
+            <div className="div__buttons">
+                <h1>{nombre}</h1>
+                <h3>{items.marca}</h3>
+                <h2>Unidades: {StockControl}</h2>
+                <div>
+                    <button onClick={ClickSubtract} className={disabledButton}>-</button>
+                    <button onClick={ClickAddOn} className={disabledButton}>Agregar al Carrito</button>
+                    <button onClick={ClickAdd} className={disabledButton}>+</button>
                 </div>
-            }
+                <h4>Precio: ${items.precio} </h4>
+            </div>
+          }
         </>
     )
 }
