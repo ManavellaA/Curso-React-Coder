@@ -3,6 +3,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import ItemListContainer from "./Components/Item/ItemListContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
 
@@ -15,11 +16,19 @@ function App() {
   const brand = [{nombre:'Ayelen Galvan', enlace:'/contacto'}];
 
   return (
-    <>
-      <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />  
-      {/* <ItemListContainer greeting='Bienvenido' /> */}
-      <ItemDetailContainer />
-    </>
+    
+      <BrowserRouter>
+        
+        <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />  
+        
+        <Switch>
+        
+          <ItemListContainer greeting='Bienvenido' exact path="/" />
+          <ItemDetailContainer />
+        
+        </Switch>
+      
+      </BrowserRouter>
   );
 }
 export default App;
