@@ -22,7 +22,7 @@ const ItemDetailConteiner = () => {
             let producto = res.filter(item => item.id === 1);
             setGetItem(producto[0]);
         });
-    },[]);
+    });
     
     return (
         <>
