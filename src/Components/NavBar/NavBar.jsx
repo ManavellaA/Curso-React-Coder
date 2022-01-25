@@ -19,7 +19,7 @@ const NavBar = ({arrayElementsNavBar, brand}) => {
                   
                   {arrayElementsNavBar.map(items => 
                     <li className="nav-item">
-                      <a className="nav-link itemNav" href={items.enlace}>{items.item}</a>
+                      <Link className="nav-link itemNav" to={items.enlace}>{items.item}</Link>
                     </li>
                   )}
                 

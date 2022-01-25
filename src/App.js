@@ -7,11 +7,11 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
 
-  const arrayElementsNavBar = [{item: 'Inicio', enlace:'/home'},
-                               {item: 'Ropa de dama', enlace:'/dama'},
-                               {item: 'Ropa de hombre', enlace:'/hombre '},
-                               {item: 'Accesorios', enlace:'/accesorios'},
-                               {item: 'Contacto', enlace:'/contacto'}];
+  const arrayElementsNavBar = [{item: 'Inicio', enlace:'/'},
+                               {item: 'Ropa de dama', enlace:'/Ropa_de_Dama'},
+                               {item: 'Ropa de hombre', enlace:'/Ropa_de_Hombre'},
+                               {item: 'Accesorios', enlace:'/Accesorios'},
+                               {item: 'Contacto', enlace:'/Contacto'}];
 
   const brand = 'Ayelen Galvan'
 
@@ -28,11 +28,11 @@ function App() {
                 <ItemListContainer greeting='Bienvenido a mi Tienda' />
             </Route>
 
-            <Route exact path="/Ropa de Dama">
+            <Route exact path="/Ropa_de_Dama">
                 <ItemListContainer greeting='Ropa de Damas' />
             </Route>
 
-            <Route exact path="/Ropa de Hombre">
+            <Route exact path="/Ropa_de_Hombre">
                 <ItemListContainer greeting='Ropa de Hombres' />
             </Route>
 
