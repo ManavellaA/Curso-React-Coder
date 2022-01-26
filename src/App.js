@@ -8,8 +8,8 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 function App() {
 
   const arrayElementsNavBar = [{item: 'Inicio', enlace:'/'},
-                               {item: 'Ropa de dama', enlace:'/Ropa_de_Dama'},
-                               {item: 'Ropa de hombre', enlace:'/Ropa_de_Hombre'},
+                               {item: 'Ropa de dama', enlace:'/Ropa de Dama'},
+                               {item: 'Ropa de hombre', enlace:'/Ropa de Hombre'},
                                {item: 'Accesorios', enlace:'/Accesorios'},
                                {item: 'Contacto', enlace:'/Contacto'}];
 
@@ -17,7 +17,6 @@ function App() {
 
   return (
     
-    // {/* <ItemDetailContainer /> */}
     <BrowserRouter>
         
         <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />  
@@ -28,11 +27,11 @@ function App() {
                 <ItemListContainer greeting='Bienvenido a mi Tienda' />
             </Route>
 
-            <Route exact path="/Ropa_de_Dama">
+            <Route exact path="/Ropa de Dama">
                 <ItemListContainer greeting='Ropa de Damas' />
             </Route>
 
-            <Route exact path="/Ropa_de_Hombre">
+            <Route exact path="/Ropa de Hombre">
                 <ItemListContainer greeting='Ropa de Hombres' />
             </Route>
 
