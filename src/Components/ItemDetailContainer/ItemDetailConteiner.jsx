@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 const ItemDetailConteiner = () => {
 
-    // const { id } = useParams();
+    const { id } = useParams();
 
     const [getItem, setGetItem] = useState([]);  
 
@@ -21,11 +21,11 @@ const ItemDetailConteiner = () => {
 
     useEffect(() => {
         promesaProductos.then(res =>{
-            let producto = res.filter(item => item.id === 1);
+            let producto = res.filter(item => item.id === id);
             setGetItem(producto[0]);
             console.log(res)
         });
-    },[]);
+    },[id]);
     
     return (
         <>
