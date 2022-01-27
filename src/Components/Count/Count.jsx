@@ -13,23 +13,15 @@ const Count = ({Items}) => {
   const disabledButton = Items.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
   return (
       <>{
-            <div className="d-flex justify-content-center align-items-center">
-                <div className="col-4 d-flex row justify-content-center align-items-center">    
-                    <h1>{nombre}</h1>
-                    <h3 className='text-center'>{Items.marca}</h3>
-                    <img src={Items.img} alt={nombre} className='mt-3 mb-3 w-100'/>
-                    <p className='text-center'>{Items.detalle}</p>
-                </div>    
-                <div className="col-3 d-flex row justify-content-center align-items-center">
-                    <h4 className='text-center'>Precio: $ {Items.precio} </h4>
-                    <div className='d-flex justify-content-center align-items-center'>
-                        <button onClick={ClickSubtract} className={disabledButton}>-</button>
-                        <h2 className='text-center ms-4 me-4 mt-3 mb-3'>{StockControl}</h2>
-                        <button onClick={ClickAdd} className={disabledButton}>+</button>
-                    </div>  
-                    <button onClick={ClickAddOn} className={disabledButton}>Añadir al Carrito</button>
-                </div>
-            </div>
+         <div className="col-3 d-flex row justify-content-center align-items-center">
+             <h4 className='text-center'>Precio: $ {Items.precio} </h4>
+             <div className='d-flex justify-content-center align-items-center'>
+                 <button onClick={ClickSubtract} className={disabledButton}>-</button>
+                 <h2 className='text-center ms-4 me-4 mt-3 mb-3'>{StockControl}</h2>
+                 <button onClick={ClickAdd} className={disabledButton}>+</button>
+             </div>  
+             <button onClick={ClickAddOn} className={disabledButton}>Añadir al Carrito</button>
+         </div>   
         }
       </>
   )
