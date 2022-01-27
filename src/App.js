@@ -1,16 +1,16 @@
 import './App.css';
 import NavBar from "./Components/NavBar/NavBar"; 
-import ItemListContainer from "./Components/Item/ItemListContainer";
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
 
   const arrayElementsNavBar = [{item: 'Inicio', enlace:'/'},
-                               {item: 'Ropa de dama', enlace:'/Ropa de Dama'},
-                               {item: 'Ropa de hombre', enlace:'/Ropa de Hombre'},
-                               {item: 'Accesorios', enlace:'/Accesorios'},
+                               {item: 'Ropa de dama', enlace:'/Tienda/Dama'},
+                               {item: 'Ropa de hombre', enlace:'/Tienda/Hombre'},
+                               {item: 'Accesorios', enlace:'/Tienda/Accesorios'},
                                {item: 'Contacto', enlace:'/Contacto'}];
 
   const brand = 'Ayelen Galvan'
@@ -24,19 +24,23 @@ function App() {
         <Switch>
 
             <Route exact path="/"> 
-                <ItemListContainer greeting='Bienvenido a mi Tienda' />
+                <ItemListContainer />
             </Route>
 
-            <Route exact path="/Ropa de Dama">
-                <ItemListContainer greeting='Ropa de Damas' />
+            <Route path="/Tienda/:category">
+                <ItemListContainer />
             </Route>
 
-            <Route exact path="/Ropa de Hombre">
-                <ItemListContainer greeting='Ropa de Hombres' />
+            <Route path="/Tienda/:category">
+                <ItemListContainer />
             </Route>
 
-            <Route exact path="/Accesorios">
-                <ItemListContainer greeting='Accesorios' />
+            <Route path="/Tienda/:category">
+                <ItemListContainer />
+            </Route>
+
+            <Route path="/Tienda/Item/:id">
+                <ItemDetailContainer />
             </Route>
 
             <Route exact path="/Contacto">
@@ -46,6 +50,11 @@ function App() {
         </Switch>
       
       </BrowserRouter>
+
+    // <>
+    // <ItemDetailContainer />
+    // </>
+
   );
 }
 export default App;
