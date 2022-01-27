@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import AddOn from '../Cart/AddOn'
 
-
 const Count = ({Items}) => {
 
   const nombre = Items.nombre;
