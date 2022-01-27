@@ -3,11 +3,8 @@ import ItemList from './ItemList';
 import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
-
     const { category } = useParams();
-
     const [arrayProductos, setArrayProductos] = useState([]);  
-        
     const promesaProductos = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve([
@@ -34,5 +31,4 @@ const ItemListContainer = () => {
         </>
     )
 }
-
 export default ItemListContainer

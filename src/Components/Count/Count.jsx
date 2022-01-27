@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import AddOn from '../Cart/AddOn'
 
 const Count = ({Items}) => {
-
   const nombre = Items.nombre;
   const marca = Items.marca;
   const precio = Items.precio;
@@ -12,7 +11,6 @@ const Count = ({Items}) => {
   const StockControl = Items.stock <= 0 ? 'Sin Stock' : contador;
   const ClickAddOn = () => AddOn({nombre, marca, precio, contador}); 
   const disabledButton = Items.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
-  
   return (
       <>{
             <div className="d-flex justify-content-center align-items-center">
@@ -36,5 +34,4 @@ const Count = ({Items}) => {
       </>
   )
 }
-
 export default Count;

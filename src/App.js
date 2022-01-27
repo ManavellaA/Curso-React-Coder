@@ -16,45 +16,24 @@ function App() {
   const brand = 'Ayelen Galvan'
 
   return (
-    
     <BrowserRouter>
-        
-        <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} />  
-
+        <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} /> 
         <Switch>
-
-            <Route exact path="/"> 
+            <Route exact path='/'> 
                 <ItemListContainer />
             </Route>
 
-            <Route path="/Tienda/:category">
+            <Route exact path='/Tienda/:category'>
                 <ItemListContainer />
             </Route>
-
-            <Route path="/Tienda/:category">
-                <ItemListContainer />
-            </Route>
-
-            <Route path="/Tienda/:category">
-                <ItemListContainer />
-            </Route>
-
-            <Route path="/Tienda/Item/:id">
+            <Route exact path='/Tienda/Item/:id'>
                 <ItemDetailContainer />
             </Route>
-
-            <Route exact path="/Contacto">
+            <Route exact path='/Contacto'>
               Contacto
             </Route>
-
         </Switch>
-      
       </BrowserRouter>
-
-    // <>
-    // <ItemDetailContainer />
-    // </>
-
   );
 }
 export default App;

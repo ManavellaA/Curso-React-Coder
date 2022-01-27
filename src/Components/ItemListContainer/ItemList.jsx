@@ -3,7 +3,6 @@ import Item from './Item';
 import './ItemList.css';
 
 const ItemList = (props) => {
-
     return (
         <>  
             {props.Productos.length > 0 ? 
@@ -15,5 +14,4 @@ const ItemList = (props) => {
 
     );
 };
-
 export default ItemList;

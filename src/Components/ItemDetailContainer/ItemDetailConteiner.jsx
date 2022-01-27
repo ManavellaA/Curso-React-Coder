@@ -4,11 +4,8 @@ import { useParams } from 'react-router-dom'
 
 
 const ItemDetailConteiner = () => {
-
     const { id } = useParams();
-
     const [getItem, setGetItem] = useState([]);  
-
     const promesaProductos = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve([
@@ -18,27 +15,20 @@ const ItemDetailConteiner = () => {
               ]);
         }, 2000); 
     });
-
     useEffect(() => {
         promesaProductos.then(res =>{
-            let producto = res.filter(item => item.id === id);
+            let producto = res.filter(item => item.id === Number(id));
             setGetItem(producto[0]);
-            console.log(res)
         });
     },[id]);
-    
     return (
         <>
             {getItem.length === 0 ?
-
                 (<div className='loading show mt-5'><div className='spin'></div></div>)
                 :
-                (
-                <div className='d-flex justify-content-center mt-5'> <ItemDetail Items={getItem} /> </div>
-                )
+                (<div className='d-flex justify-content-center mt-5'> <ItemDetail Items={getItem} /> </div>)
             }
         </>
     )
 };
-
 export default ItemDetailConteiner
