@@ -20,7 +20,7 @@ const ItemDetailConteiner = () => {
             let producto = res.filter(item => item.id === Number(id));
             setGetItem(producto[0]);
         });
-    },[id]);
+    },);
     return (
         <>
             {getItem.length === 0 ?
