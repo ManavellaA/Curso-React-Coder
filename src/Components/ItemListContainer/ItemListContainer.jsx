@@ -23,12 +23,12 @@ const ItemListContainer = () => {
             setArrayProductos(res)
             }
         });
-    },[category]);
+    },);
 
     return (
-        <>
+        <div className='ms-4 me-4 mt-5'>
             <ItemList Productos={arrayProductos} />
-        </>
+        </div>
     )
 }
 export default ItemListContainer

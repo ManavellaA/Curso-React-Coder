@@ -12,7 +12,6 @@ const NavBar = ({arrayElementsNavBar, brand}) => {
               <button className="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <CartIcon />
               <div className="collapse navbar-collapse align-items-center justify-content-center" id="navbarNav">
                 <ul className="navbar-nav align-items-center justify-content-center">
                   {arrayElementsNavBar.map(items => 
@@ -21,6 +20,9 @@ const NavBar = ({arrayElementsNavBar, brand}) => {
                     </li>
                   )}
                 </ul>
+              </div>
+              <div className='d-flex justify-content-start'>
+              <CartIcon />
               </div>
             </div>
           </nav>

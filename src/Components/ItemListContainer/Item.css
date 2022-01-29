@@ -1,19 +1,16 @@
-h1{
-    text-align: center;
-}
 .div__buttons{
+    color: rgba(33, 33, 33, 0.748);
     margin: 10px 10px 10px 10px;
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 1em;
-    width: 40%;
     box-shadow: 3px 5px 8px black;
+    transition: all .2s;
 }
-.div__buttons button{
-    margin: 10px;
-}
-.mayor{
-    color:red;
-}
+
+.cont :hover div { 
+  transform:scale(1.03);  
+} 
