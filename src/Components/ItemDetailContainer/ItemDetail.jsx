@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Count from '../Count/Count'
+import AddOn from '../Cart/AddOn'
 
 const ItemDetail = ({Items}) => {
 
@@ -9,6 +10,7 @@ const ItemDetail = ({Items}) => {
   function onAdd (nombre, marca, precio, contador) {
     SetCount(false);
     console.log(`Agregaste al carrito "${contador} ${nombre} ${marca} $${precio}"`);
+    AddOn({nombre, marca, precio, contador})
   }; 
 
   return (
