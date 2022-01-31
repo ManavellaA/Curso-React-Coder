@@ -1,9 +1,9 @@
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from "./Components/NavBar/NavBar"; 
-import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 
 function App() {
 
@@ -31,6 +31,9 @@ function App() {
             </Route>
             <Route exact path='/Contacto'>
               Contacto
+            </Route>
+            <Route exact path='/Cart'>
+              Carrito
             </Route>
         </Switch>
       </BrowserRouter>
