@@ -10,7 +10,7 @@ const ItemDetail = ({Items}) => {
   
   function onAdd (id, contador) {
     SetCount(false);
-    setCart(id, contador)
+    setCart({id, contador})
     console.log(cart);
   }; 
 

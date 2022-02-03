@@ -5,7 +5,7 @@ import CartContext from './Components/Cart/CartContext';
 import NavBar from "./Components/NavBar/NavBar"; 
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
-
+import CartIcon from './Components/Cart/CartIcon';
 
 function App() {
 
@@ -39,7 +39,7 @@ function App() {
             </Route>
   
             <Route exact path='/Cart'>
-              
+              <CartIcon />
             </Route>
         </Switch>
       </CartContext>
