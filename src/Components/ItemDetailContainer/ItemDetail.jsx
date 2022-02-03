@@ -1,16 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { Link } from 'react-router-dom'
 import Count from '../Count/Count'
-import AddOn from '../Cart/AddOn'
+import { context } from '../Cart/CartContext';
 
 const ItemDetail = ({Items}) => {
 
+  const { setCart, cart } = useContext(context);
   const [count, SetCount] = useState(true);
   
-  function onAdd (nombre, marca, precio, contador) {
+  function onAdd (id, contador) {
     SetCount(false);
-    console.log(`Agregaste al carrito "${contador} ${nombre} ${marca} $${precio}"`);
-    AddOn({nombre, marca, precio, contador})
+    setCart(id, contador)
+    console.log(cart);
   }; 
 
   return (

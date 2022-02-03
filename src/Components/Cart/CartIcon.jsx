@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import { BiCart } from 'react-icons/bi';
 import { Offcanvas } from 'react-bootstrap';
+import Cart from './Cart';
 
-const CartIcon = (placement='end') => {
+const CartIcon = () => {
 
   const [show, setShow] = useState(false);
 
@@ -13,12 +14,7 @@ const CartIcon = (placement='end') => {
     <>          
       <h3 className='ms-3 me-3' variant="primary" onClick={handleShow} type='button'><BiCart /></h3>  
       <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Carro de Compras</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Contenido del Carrito
-        </Offcanvas.Body>
+        <Cart />
       </Offcanvas>
     </>
     )
