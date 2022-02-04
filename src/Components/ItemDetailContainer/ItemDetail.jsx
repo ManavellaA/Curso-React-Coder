@@ -9,14 +9,18 @@ const ItemDetail = ({Items}) => {
   const [count, SetCount] = useState(true);
   
   function onAdd (Item, contador) {
-    SetCount(false);
-    // if(cart.length > 0) {
-    //   if(cart.include(Item.id)){
-    //     alert('se repite');
-    //   }else{
+
+    if(cart.length > 0) {
+      if(cart.find(item => item.id === Item.id)){
+        console.log('se repite el articulo');
+      }else{
         setCart([...cart, {...Item, cantidad: contador}])
-    //   }
-    // };
+        SetCount(false);
+      }
+    }else{
+      setCart([{...Item, cantidad: contador}])
+      SetCount(false);
+    };
   }
 
   return (
