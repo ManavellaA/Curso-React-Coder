@@ -3,7 +3,7 @@ import {Offcanvas} from 'react-bootstrap';
 import {  } from "./CartContext";
 
 
-const AddOn = (AddOfCart) => {
+const AddOn = () => {
     
 
 

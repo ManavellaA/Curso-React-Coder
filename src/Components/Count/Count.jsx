@@ -6,7 +6,7 @@ const Count = ({Items, onAdd}) => {
   const ClickAdd = () => setContador(contador < Items.stock ? contador + 1 : contador);
   const ClickSubtract = () => setContador(contador > Items.inicial ? contador - 1 : Items.inicial);
   const StockControl = Items.stock <= 0 ? 'Sin Stock' : contador;
-  const ClickOnAdd = () => onAdd(Items.id, contador); 
+  const ClickOnAdd = () => onAdd(Items, contador); 
   const disabledButton = Items.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
   return (
       <>

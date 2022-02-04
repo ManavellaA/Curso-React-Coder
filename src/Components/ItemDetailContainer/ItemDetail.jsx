@@ -5,14 +5,19 @@ import { context } from '../Cart/CartContext';
 
 const ItemDetail = ({Items}) => {
 
-  const { setCart, cart } = useContext(context);
+  const { setCart, cart} = useContext(context);
   const [count, SetCount] = useState(true);
   
-  function onAdd (id, contador) {
+  function onAdd (Item, contador) {
     SetCount(false);
-    setCart({id, contador})
-    console.log(cart);
-  }; 
+    // if(cart.length > 0) {
+    //   if(cart.include(Item.id)){
+    //     alert('se repite');
+    //   }else{
+        setCart([...cart, {...Item, cantidad: contador}])
+    //   }
+    // };
+  }
 
   return (
     <>{

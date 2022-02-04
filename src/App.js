@@ -5,7 +5,7 @@ import CartContext from './Components/Cart/CartContext';
 import NavBar from "./Components/NavBar/NavBar"; 
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
-import CartIcon from './Components/Cart/CartIcon';
+// import CartIcon from './Components/Cart/CartIcon';
 
 function App() {
 
@@ -18,8 +18,8 @@ function App() {
   const brand = 'Ayelen Galvan'
 
   return (
-    <BrowserRouter>
-      <CartContext>
+    <CartContext>
+      <BrowserRouter>
         <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} /> 
         <Switch>
             <Route exact path='/'> 
@@ -39,11 +39,11 @@ function App() {
             </Route>
   
             <Route exact path='/Cart'>
-              <CartIcon />
+              {/* <CartIcon /> */}
             </Route>
         </Switch>
-      </CartContext>
-    </BrowserRouter>
+      </BrowserRouter>
+    </CartContext>
   );
 }
 export default App;
