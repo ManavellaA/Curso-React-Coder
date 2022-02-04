@@ -5,22 +5,21 @@ import { context } from '../Cart/CartContext';
 
 const ItemDetail = ({Items}) => {
 
-  const { setCart, cart} = useContext(context);
-  const [count, SetCount] = useState(true);
-  
-  function onAdd (Item, contador) {
+  const { cart, setCart } = useContext(context);
+  const [view, setView] = useState(true);
 
-    if(cart.length > 0) {
-      if(cart.find(item => item.id === Item.id)){
-        alert(`Ya compraste el articulo ${Item.nombre} ${Item.marca}`);
+  function onAdd (Item, contador) {
+      if(cart.length > 0) {
+        if(cart.find(item => item.id === Item.id)){
+          alert(`Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`);
+        }else{
+          setCart([...cart, {...Item, cantidad: contador}])
+          setView(false);
+        }
       }else{
-        setCart([...cart, {...Item, cantidad: contador}])
-        SetCount(false);
-      }
-    }else{
-      setCart([{...Item, cantidad: contador}])
-      SetCount(false);
-    };
+        setCart([{...Item, cantidad: contador}])
+        setView(false);
+      };
   }
 
   return (
@@ -34,7 +33,7 @@ const ItemDetail = ({Items}) => {
           <div className="col-md-4 col-lg-3 d-flex row justify-content-center align-items-center">
              <h4 className='text-center'>Precio: $ {Items.precio} </h4>
              <div className='d-flex row justify-content-center align-items-center'>
-                {(count) ?
+                {(view) ?
                   <Count Items={Items} onAdd={onAdd} />
                   :
                   <>

@@ -12,7 +12,7 @@ const ItemListContainer = () => {
                 {id: 2, categoria: 'Dama', nombre: 'Pantalon', marca:'Narrow' , precio:2200 , stock: 0, inicial: 1 , img:'https://www.digitalsport.com.ar/files/products/61bd23352ac14-576849-500x500.jpg', detalle:'Pantalon azul fibrana con cinturon Dama'},
                 {id: 3, categoria: 'Accesorios', nombre: 'Bolso de viaje', marca:'Topper' , precio:3150 , stock: 4, inicial: 1 , img:'https://www.digitalsport.com.ar/files/products/61aa0762eccfa-572901-500x500.jpg', detalle:'Bolso de viaje XXL para Dama'},
             ]);
-        }, 500); 
+        }, 0); 
     });
     useEffect(() => {
         promesaProductos.then(res =>{

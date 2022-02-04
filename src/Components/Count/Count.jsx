@@ -8,6 +8,7 @@ const Count = ({Items, onAdd}) => {
   const StockControl = Items.stock <= 0 ? 'Sin Stock' : contador;
   const ClickOnAdd = () => onAdd(Items, contador); 
   const disabledButton = Items.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
+
   return (
       <>
           <div className='d-flex justify-content-center align-items-center'>
@@ -15,7 +16,7 @@ const Count = ({Items, onAdd}) => {
             <h2 className='text-center ms-4 me-4 mt-3 mb-3'>{StockControl}</h2>
             <button onClick={ClickAdd} className='btn btn-success'>+</button>
           </div>  
-          <button onClick={ClickOnAdd} className={disabledButton}>Añadir al Carrito</button>
+            <button onClick={ClickOnAdd} className={disabledButton}>Añadir al Carrito</button>
       </>
   )
 }
