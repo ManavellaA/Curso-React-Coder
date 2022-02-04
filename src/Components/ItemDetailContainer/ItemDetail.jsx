@@ -12,7 +12,7 @@ const ItemDetail = ({Items}) => {
 
     if(cart.length > 0) {
       if(cart.find(item => item.id === Item.id)){
-        console.log('se repite el articulo');
+        alert(`Ya compraste el articulo ${Item.nombre} ${Item.marca}`);
       }else{
         setCart([...cart, {...Item, cantidad: contador}])
         SetCount(false);
