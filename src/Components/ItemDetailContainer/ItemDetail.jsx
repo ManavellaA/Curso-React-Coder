@@ -6,6 +6,7 @@ import { context } from '../Cart/CartContext';
 const ItemDetail = ({Items}) => {
 
   const { cart, setCart } = useContext(context);
+
   const [view, setView] = useState(true);
 
   function onAdd (Item, contador) {
@@ -13,7 +14,7 @@ const ItemDetail = ({Items}) => {
         if(cart.find(item => item.id === Item.id)){
           alert(`Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`);
         }else{
-          setCart([...cart, {...Item, cantidad: contador}])
+          setCart([...cart, {...Item, cantidad: contador}]) 
           setView(false);
         }
       }else{
