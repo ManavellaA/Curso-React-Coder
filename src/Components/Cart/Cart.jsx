@@ -1,13 +1,11 @@
 import React, {useContext} from 'react'
 import {Offcanvas} from 'react-bootstrap';
 import { context } from "./CartContext";
-
+import Controls from '../Count/Controls';
 
 const AddOn = () => {
     
     const { cart, setCart, elementQuit } = useContext(context);
-
-
 
     return (
         <>
@@ -20,12 +18,13 @@ const AddOn = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
 
-                {cart.map(item =>{ <div>
-                    <img src={item.img} style={'width: 5%'} />
-                    <p>{item.name} {item.marca} </p>
-
-                </div>})
-                }
+                {cart.map(item =>  
+                    <div className='d-inline'>
+                    {/* <img src={item.img} /> */}
+                    <p className='d-inline'>{item.nombre} {item.marca}</p>
+                    <Controls className='d-inline' />
+                    </div>
+                )}
 
             </Offcanvas.Body>
         </>
