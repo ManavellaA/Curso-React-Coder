@@ -15,11 +15,18 @@ const CartContext = ({children}) => {
         
         console.log(cart)
     }
-        console.log(cart)
-                                  
+    
+    
+    
+    
+    const ClearCart = () => setCart([]);
+    const PurchaseCart = () => {}
+    
+    console.log(cart)
+    
     return( 
         <>  
-            <context.Provider value={{cart, setCart, elementQuit}} >
+            <context.Provider value={{cart, setCart, elementQuit, ClearCart, PurchaseCart}} >
                 {children}
             </context.Provider>
         </>    

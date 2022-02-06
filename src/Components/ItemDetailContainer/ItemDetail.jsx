@@ -34,7 +34,6 @@ const ItemDetail = ({Items}) => {
           <div className="col-md-4 col-lg-3 d-flex row justify-content-center align-items-center">
              <h4 className='text-center'>Precio: $ {Items.precio} </h4>
              <div className='d-flex row justify-content-center align-items-center'>
-             {/* <Count Items={Items} onAdd={onAdd} /> */}
                 {(view) ?
                   <>
                   <Count Items={Items} onAdd={onAdd} />
