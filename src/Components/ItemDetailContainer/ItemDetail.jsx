@@ -1,27 +1,7 @@
 import React, {useState, useContext} from 'react'
-import { Link } from 'react-router-dom'
 import Count from '../Count/Count'
-import { context } from '../Cart/CartContext';
 
 const ItemDetail = ({Items}) => {
-
-  const { cart, setCart } = useContext(context);
-
-  const [view, setView] = useState(true);
-
-  function onAdd (Item, contador) {
-      if(cart.length > 0) {
-        if(cart.find(item => item.id === Item.id)){
-          alert(`Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`);
-        }else{
-          setCart([...cart, {...Item, cantidad: contador}]) 
-          setView(false);
-        }
-      }else{
-        setCart([{...Item, cantidad: contador}])
-        setView(false);
-      };
-  }
 
   return (
     <>{
@@ -34,16 +14,8 @@ const ItemDetail = ({Items}) => {
           <div className="col-md-4 col-lg-3 d-flex row justify-content-center align-items-center">
              <h4 className='text-center'>Precio: $ {Items.precio} </h4>
              <div className='d-flex row justify-content-center align-items-center'>
-                {(view) ?
-                  <>
-                  <Count Items={Items} onAdd={onAdd} />
-                  </>
-                  :
-                  <>
-                    <Link to={'/cart'} className='text-center text-decoration-none'><button className='text-white btn btn-success'>Ir al carrito</button></Link>
-                  </>
-                }
-              </div>
+              <Count Items={Items} />
+             </div>
           </div>  
           <p className='text-center mt-5'>{Items.detalle}</p>
         </div>
