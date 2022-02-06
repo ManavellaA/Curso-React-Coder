@@ -34,12 +34,14 @@ const ItemDetail = ({Items}) => {
           <div className="col-md-4 col-lg-3 d-flex row justify-content-center align-items-center">
              <h4 className='text-center'>Precio: $ {Items.precio} </h4>
              <div className='d-flex row justify-content-center align-items-center'>
+             {/* <Count Items={Items} onAdd={onAdd} /> */}
                 {(view) ?
+                  <>
                   <Count Items={Items} onAdd={onAdd} />
+                  </>
                   :
                   <>
-                    <p className='text-center'>Agregado al carrito</p> 
-                    <Link to={'/cart'} className='text-center text-decoration-none'><button className='text-white btn btn-success'>Finalizar compra</button></Link>
+                    <Link to={'/cart'} className='text-center text-decoration-none'><button className='text-white btn btn-success'>Ir al carrito</button></Link>
                   </>
                 }
               </div>

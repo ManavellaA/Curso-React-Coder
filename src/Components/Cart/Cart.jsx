@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Offcanvas} from 'react-bootstrap';
-import {  } from "./CartContext";
+import { context } from "./CartContext";
 
 
 const AddOn = () => {
     
+    const { cart, setCart, elementQuit } = useContext(context);
+
 
 
     return (
@@ -18,7 +20,12 @@ const AddOn = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
 
-                Contenido del Carrito
+                {cart.map(item =>{ <div>
+                    <img src={item.img} style={'width: 5%'} />
+                    <p>{item.name} {item.marca} </p>
+
+                </div>})
+                }
 
             </Offcanvas.Body>
         </>
