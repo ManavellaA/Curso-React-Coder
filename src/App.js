@@ -5,7 +5,6 @@ import CartContext from './Components/Cart/CartContext';
 import NavBar from "./Components/NavBar/NavBar"; 
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
-import Cart from './Components/Cart/Cart';
 
 function App() {
 
@@ -37,10 +36,6 @@ function App() {
   
             <Route exact path='/Contacto'>
               Contacto
-            </Route>
-
-            <Route exact path='/Cart'>
-              <Cart />  
             </Route>
 
         </Switch>

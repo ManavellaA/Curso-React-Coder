@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
 import { context } from "./CartContext";
 import "./Cart.css";
 import Controls from "./Controls";
-import { useState } from "react";
 
 const AddOn = () => {
   const { cart, ClearCart, PurchaseCart, show, setShow } = useContext(context);
