@@ -5,7 +5,7 @@ import CartContext from './Components/Cart/CartContext';
 import NavBar from "./Components/NavBar/NavBar"; 
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
-// import CartIcon from './Components/Cart/CartIcon';
+import Cart from './Components/Cart/Cart';
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
       <BrowserRouter>
         <NavBar arrayElementsNavBar={arrayElementsNavBar} brand={brand} /> 
         <Switch>
+
             <Route exact path='/'> 
                 <ItemListContainer /> 
             </Route>
@@ -37,10 +38,11 @@ function App() {
             <Route exact path='/Contacto'>
               Contacto
             </Route>
-  
+
             <Route exact path='/Cart'>
-              {/* <CartIcon /> */}
+              <Cart />  
             </Route>
+
         </Switch>
       </BrowserRouter>
     </CartContext>

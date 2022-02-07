@@ -1,41 +1,61 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext } from "react";
 
-export const context = createContext(); 
+export const context = createContext();
 
-const CartContext = ({children}) => {
-    
-    const [cart, setCart] = useState([]);
+const CartContext = ({ children }) => {
+  const [cart, setCart] = useState([]);
 
-    function onAdd (Item, contador) {
-        if(cart.length > 0) {
-          if(cart.find(item => item.id === Item.id)){
-            alert(`Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`);
-          }else{
-            setCart([...cart, {...Item, cantidad: contador}]) 
-          }
-        }else{
-          setCart([{...Item, cantidad: contador}])
-        };
+  const [show, setShow] = useState(false);
+
+  function onAdd(Item, contador) {
+    if (cart.length > 0) {
+      if (cart.find((e) => e.id === Item.id)) {
+        alert(`Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`);
+      } else {
+        setCart([...cart, { ...Item, cantidad: contador }]);
+      }
+    } else {
+      setCart([{ ...Item, cantidad: contador }]);
     }
+  }
 
-    const RemoveItem = (item) => {
-        setCart(cart.filter(e => e !== item));
-    }
+  const RemoveItem = (item) => {
+    setCart(cart.filter((e) => e !== item));
+  };
 
-    const ClearCart = () => setCart([]);
-    const AddItem = (item) => {}
-    const SubstractItem = (item) => {}
-    const PurchaseCart = () => {}
+  const ClearCart = () => setCart([]);
 
-    
-    
-    return( 
-        <>  
-            <context.Provider value={{cart, setCart, onAdd, ClearCart, PurchaseCart, RemoveItem, AddItem, SubstractItem}} >
-                {children}
-            </context.Provider>
-        </>    
-    )
+  const AddItem = (item, add) => {
+    setCart(cart.map((e) => (e.id === item.id ? { ...e, cantidad: add } : e)));
+  };
+
+  const SubstractItem = (item, subs) => {
+    setCart(cart.map((e) => (e.id === item.id ? { ...e, cantidad: subs } : e)));
+  };
+  const PurchaseCart = () => {};
+
+  console.log(cart);
+
+  return (
+    <>
+      <context.Provider
+        value={{
+          cart,
+          setCart,
+          onAdd,
+          ClearCart,
+          PurchaseCart,
+          RemoveItem,
+          AddItem,
+          SubstractItem,
+          setShow,
+          show,
+        }}
+      >
+        {children}
+      </context.Provider>
+    </>
+  );
 };
 
 export default CartContext;
