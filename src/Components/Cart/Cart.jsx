@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
 import { context } from "./CartContext";
@@ -10,7 +10,7 @@ const AddOn = () => {
 
   const handleClose = () => setShow(false);
 
-  // const Total = cart.map(item => item.precio * item.cantidad).reduce((a, b) => a + b);
+  const Total = cart.reduce((a, b) => a + b.precio * b.cantidad, 0);
 
   return (
     <>
@@ -47,7 +47,7 @@ const AddOn = () => {
                 </>
               ))}
               <br />
-              {/* <h5 className="text-center">Total compra ${Total}</h5>; */}
+              <h5 className="text-center">Total compra ${Total}</h5>;
               <div className="d-flex justify-content-around align-items-center mt-5">
                 <button onClick={PurchaseCart} className="btn btn-success">
                   Finalizar compra

@@ -5,16 +5,20 @@ const Count = ({ Items }) => {
   const { onAdd, setShow, isInCart, AddItem, SubstractItem } =
     useContext(context);
 
-  const [contador, setContador] = useState(
-    Items.stock <= 0 ? 0 : Items.inicial
-  );
-
   const view = isInCart(Items) ? false : true;
+
+  const [contador, setContador] = useState(
+    Items.stock <= 0 ? 0 : !view ? isInCart(Items).inicial : Items.inicial
+  );
 
   const ClickAdd = () => {
     if (isInCart(Items)) {
-      setContador(contador < Items.stock ? contador + 1 : contador);
-      AddItem(Items, contador);
+      let add = isInCart(Items).cantidad;
+      add++;
+      isInCart(Items).stock >= add
+        ? AddItem(Items, add)
+        : alert(`Limite de stock para este articulo`);
+      setContador(add);
     } else {
       setContador(contador < Items.stock ? contador + 1 : contador);
     }
@@ -22,8 +26,14 @@ const Count = ({ Items }) => {
 
   const ClickSubtract = () => {
     if (isInCart(Items)) {
-      setContador(contador > Items.inicial ? contador - 1 : Items.inicial);
-      SubstractItem(Items, contador);
+      if (isInCart(Items).cantidad > 1) {
+        SubstractItem(Items, isInCart(Items).cantidad - 1);
+        setContador(isInCart(Items).cantidad);
+      } else {
+        alert(
+          `No puedes comprar menos de ${isInCart(Items).inicial} articulo/s`
+        );
+      }
     } else {
       setContador(contador > Items.inicial ? contador - 1 : Items.inicial);
     }
