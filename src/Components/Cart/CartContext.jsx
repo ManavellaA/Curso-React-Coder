@@ -34,7 +34,7 @@ const CartContext = ({ children }) => {
   };
   const PurchaseCart = () => {};
 
-  console.log(cart);
+  // console.log(cart);
 
   return (
     <>

@@ -10,11 +10,7 @@ const AddOn = () => {
 
   const handleClose = () => setShow(false);
 
-  const Total = () => {
-    const [acc, setAcc] = useState(0);
-    cart.map((item) => setAcc(acc + item.precio * item.cantidad));
-    return acc;
-  };
+  // const Total = cart.map(item => item.precio * item.cantidad).reduce((a, b) => a + b);
 
   return (
     <>
@@ -51,7 +47,7 @@ const AddOn = () => {
                 </>
               ))}
               <br />
-              <h5 className="text-center">Total compra ${Total} </h5>
+              {/* <h5 className="text-center">Total compra ${Total}</h5>; */}
               <div className="d-flex justify-content-around align-items-center mt-5">
                 <button onClick={PurchaseCart} className="btn btn-success">
                   Finalizar compra
