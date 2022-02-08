@@ -9,7 +9,7 @@ const CartContext = ({ children }) => {
 
   function onAdd(Item, contador) {
     if (cart.length > 0) {
-      if (cart.find((e) => e.id === Item.id)) {
+      if (isInCart(Item)) {
         alert(`Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`);
       } else {
         setCart([...cart, { ...Item, cantidad: contador }]);
@@ -18,6 +18,10 @@ const CartContext = ({ children }) => {
       setCart([{ ...Item, cantidad: contador }]);
     }
   }
+
+  const isInCart = (item) => {
+    return cart.find((e) => e.id === item.id);
+  };
 
   const RemoveItem = (item) => {
     setCart(cart.filter((e) => e !== item));
@@ -34,7 +38,7 @@ const CartContext = ({ children }) => {
   };
   const PurchaseCart = () => {};
 
-  // console.log(cart);
+  console.log(cart);
 
   return (
     <>
@@ -50,6 +54,7 @@ const CartContext = ({ children }) => {
           SubstractItem,
           setShow,
           show,
+          isInCart,
         }}
       >
         {children}
