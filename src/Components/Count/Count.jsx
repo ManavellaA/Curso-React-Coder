@@ -2,25 +2,20 @@ import React, { useState, useContext } from "react";
 import { context } from "../Cart/CartContext";
 
 const Count = ({ Items }) => {
-  
   const { onAdd, setShow, isInCart, AddItem, SubstractItem } =
     useContext(context);
 
   const view = isInCart(Items) ? false : true;
 
-  const [contador, setContador] = useState(
-    Items.stock <= 0 ? 0 : !view ? isInCart(Items).inicial : Items.inicial
-  );
+  const [contador, setContador] = useState(Items.inicial);
 
   const ClickAdd = () => {
     if (isInCart(Items)) {
       let add = isInCart(Items).cantidad;
       add++;
-      add = parseInt(add);
       isInCart(Items).stock >= add
         ? AddItem(Items, add)
         : alert(`Limite de stock para este articulo`);
-      setContador(add);
     } else {
       setContador(contador < Items.stock ? contador + 1 : contador);
     }
@@ -28,9 +23,8 @@ const Count = ({ Items }) => {
 
   const ClickSubtract = () => {
     if (isInCart(Items)) {
-      if (isInCart(Items).cantidad > 1) {
+      if (isInCart(Items).cantidad > isInCart(Items).inicial) {
         SubstractItem(Items, isInCart(Items).cantidad - 1);
-        setContador(isInCart(Items).cantidad);
       } else {
         alert(
           `No puedes comprar menos de ${isInCart(Items).inicial} articulo/s`
@@ -50,6 +44,7 @@ const Count = ({ Items }) => {
 
   const ClickOnAdd = () => {
     onAdd(Items, contador);
+    setContador(Items.inicial);
   };
 
   const disabledButton =
