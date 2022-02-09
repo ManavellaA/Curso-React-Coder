@@ -16,6 +16,7 @@ const Count = ({ Items }) => {
     if (isInCart(Items)) {
       let add = isInCart(Items).cantidad;
       add++;
+      add = parseInt(add);
       isInCart(Items).stock >= add
         ? AddItem(Items, add)
         : alert(`Limite de stock para este articulo`);

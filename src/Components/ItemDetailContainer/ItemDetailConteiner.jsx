@@ -1,60 +1,34 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { getFirestore } from "../FireBase/Firebase";
 
 const ItemDetailConteiner = () => {
   const { id } = useParams();
   const [getItem, setGetItem] = useState([]);
-  const promesaProductos = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve([
-        {
-          id: 1,
-          categoria: "H",
-          nombre: "Remera",
-          marca: "Adidas",
-          precio: 1100,
-          stock: 2,
-          inicial: 1,
-          img: "https://www.digitalsport.com.ar/files/products/613139ab5c7bc-516590-500x500.jpg",
-          detalle: "Entallada FitDry para Hombre",
-        },
-        {
-          id: 2,
-          categoria: "M",
-          nombre: "Pantalon",
-          marca: "Narrow",
-          precio: 2200,
-          stock: 5,
-          inicial: 1,
-          img: "https://www.digitalsport.com.ar/files/products/61bd23352ac14-576849-500x500.jpg",
-          detalle: "Pantalon azul fibrana con cinturon Dama",
-        },
-        {
-          id: 3,
-          categoria: "A",
-          nombre: "Bolso de viaje",
-          marca: "Topper",
-          precio: 3150,
-          stock: 4,
-          inicial: 1,
-          img: "https://www.digitalsport.com.ar/files/products/61aa0762eccfa-572901-500x500.jpg",
-          detalle: "Bolso de viaje XXL para Dama",
-        },
-      ]);
-    }, 0);
-  });
+
   useEffect(() => {
-    promesaProductos.then((res) => {
-      let producto = res.filter((item) => item.id === Number(id));
-      setGetItem(producto[0]);
-    });
+    const DataBase = getFirestore();
+
+    const Collecion = DataBase.collection("items");
+
+    const item = Collecion.doc(id);
+
+    item
+      .get()
+      .then((doc) => {
+        setGetItem({ id: doc.id, ...doc.data() });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   });
   return (
     <>
       {getItem.length === 0 ? (
-        <div className="loading show mt-5">
+        <div className="loading show mt-5 row">
           <div className="spin"></div>
+          <h4 className="text-center mt-3">...Loading...</h4>
         </div>
       ) : (
         <div className="d-flex justify-content-center mt-5">

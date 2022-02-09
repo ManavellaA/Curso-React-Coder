@@ -12,8 +12,9 @@ const ItemList = (props) => {
           ))}
         </div>
       ) : (
-        <div className="loading show mt-5">
+        <div className="loading show mt-5 row">
           <div className="spin"></div>
+          <h4 className="text-center mt-3">...Loading...</h4>
         </div>
       )}
     </>
