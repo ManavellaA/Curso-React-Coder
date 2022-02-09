@@ -17,7 +17,7 @@ const ItemDetailConteiner = () => {
           stock: 2,
           inicial: 1,
           img: "https://www.digitalsport.com.ar/files/products/613139ab5c7bc-516590-500x500.jpg",
-          detalle: "Remera negra entallada FitDry para Hombre",
+          detalle: "Entallada FitDry para Hombre",
         },
         {
           id: 2,

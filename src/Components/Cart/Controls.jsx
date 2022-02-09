@@ -5,6 +5,7 @@ const Controls = ({ item }) => {
   const { RemoveItem, SubstractItem, AddItem, isInCart } = useContext(context);
 
   const ClickDelete = () => RemoveItem(item);
+  
   const ClickAdd = () => {
     let add = item.cantidad;
     add++;

@@ -6,6 +6,7 @@ import "./Cart.css";
 import Controls from "./Controls";
 
 const AddOn = () => {
+  
   const { cart, ClearCart, PurchaseCart, show, setShow } = useContext(context);
 
   const handleClose = () => setShow(false);

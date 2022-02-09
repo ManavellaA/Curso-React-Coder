@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { context } from "../Cart/CartContext";
 
 const Count = ({ Items }) => {
+  
   const { onAdd, setShow, isInCart, AddItem, SubstractItem } =
     useContext(context);
 
@@ -49,8 +50,10 @@ const Count = ({ Items }) => {
   const ClickOnAdd = () => {
     onAdd(Items, contador);
   };
+
   const disabledButton =
     Items.stock <= 0 ? "disabled btn btn-success w-50" : "btn btn-success w-50";
+
   const handleShow = () => setShow(true);
 
   return (
