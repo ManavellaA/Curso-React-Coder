@@ -22,7 +22,7 @@ const ItemDetailConteiner = () => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, [id]);
   return (
     <>
       {getItem.length === 0 ? (

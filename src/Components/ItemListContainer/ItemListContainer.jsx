@@ -32,7 +32,7 @@ const ItemListContainer = () => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  },[category]);
   return (
     <div className="ms-4 me-4 mt-5">
       <ItemList Productos={arrayProductos} />
