@@ -9,8 +9,13 @@
     border-radius: 1em;
     box-shadow: 3px 5px 8px black;
     transition: all .25s;
+    width: calc(13em + 4vw);
 }
 
 .cont :hover div { 
-  transform:scale(1.02);  
+  transform:scale(1.01);  
 } 
+
+h5{
+  font-size: calc(0.8em + 0.5vw)
+}

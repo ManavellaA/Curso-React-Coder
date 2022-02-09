@@ -6,7 +6,7 @@ const ItemList = (props) => {
   return (
     <>
       {props.Productos.length > 0 ? (
-        <div className="d-flex justify-content-center w-100">
+        <div className="d-flex justify-content-center flex-wrap container">
           {props.Productos.map((element) => (
             <Item items={element} />
           ))}

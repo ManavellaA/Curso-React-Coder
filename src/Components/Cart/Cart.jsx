@@ -48,7 +48,7 @@ const AddOn = () => {
                 </>
               ))}
               <br />
-              <h5 className="text-center">Total compra ${Total}</h5>;
+              <h5 className="text-center">Total compra ${Total}</h5>
               <div className="d-flex justify-content-around align-items-center mt-5">
                 <button onClick={PurchaseCart} className="btn btn-success">
                   Finalizar compra
