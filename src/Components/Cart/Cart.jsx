@@ -7,11 +7,9 @@ import Controls from "./Controls";
 
 const AddOn = () => {
   
-  const { cart, ClearCart, PurchaseCart, show, setShow } = useContext(context);
+  const { cart, ClearCart, Total, PurchaseCart, show, setShow } = useContext(context);
 
   const handleClose = () => setShow(false);
-
-  const Total = cart.reduce((a, b) => a + b.precio * b.cantidad, 0);
 
   return (
     <>

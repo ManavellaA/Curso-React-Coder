@@ -7,7 +7,7 @@ const CartContext = ({ children }) => {
 
   const [show, setShow] = useState(false);
 
-  function onAdd(Item, contador) {
+  const  onAdd = (Item, contador) => {
     if (cart.length > 0) {
       if (isInCart(Item)) {
         alert(`Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`);
@@ -22,6 +22,8 @@ const CartContext = ({ children }) => {
   const isInCart = (item) => {
     return cart.find((e) => e.id === item.id);
   };
+
+  const Total = cart.reduce((a, b) => a + b.precio * b.cantidad, 0);
 
   const RemoveItem = (item) => {
     setCart(cart.filter((e) => e !== item));
@@ -55,6 +57,7 @@ const CartContext = ({ children }) => {
           setShow,
           show,
           isInCart,
+          Total
         }}
       >
         {children}
