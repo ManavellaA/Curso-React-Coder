@@ -1,4 +1,4 @@
-.icon {
+.icon-container {
     position:fixed;
     width:60px;
     height:60px;
@@ -8,4 +8,8 @@
     color:#FFF;
     border-radius:50px;
     z-index:100;
+  }
+
+  .icon{
+      margin-top: 9px;
   }

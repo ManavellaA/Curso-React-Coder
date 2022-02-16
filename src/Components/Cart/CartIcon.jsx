@@ -12,12 +12,12 @@ const CartIcon = () => {
   return (
     <>
       <div
-        className="icon text-center"
+        className="icon-container text-center"
         variant="primary"
         onClick={handleShow}
         type="button"
       >
-        <div className="mt-2">
+        <div className="icon">
           <p className="d-inline"> {cart.length > 0 ? cart.length : ""} </p>
           <h3 className="d-inline">
             <BiCart />
