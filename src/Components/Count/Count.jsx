@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { context } from "../Cart/CartContext";
+import Alerts from "../AuxElements/Alerts";
 
 const Count = ({ Items }) => {
   const { onAdd, setShow, isInCart, AddItem, SubstractItem } =
@@ -15,7 +16,7 @@ const Count = ({ Items }) => {
       add++;
       isInCart(Items).stock >= add
         ? AddItem(Items, add)
-        : alert(`Limite de stock para este articulo`);
+        : Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
     } else {
       setContador(contador < Items.stock ? contador + 1 : contador);
     }
@@ -26,9 +27,7 @@ const Count = ({ Items }) => {
       if (isInCart(Items).cantidad > isInCart(Items).inicial) {
         SubstractItem(Items, isInCart(Items).cantidad - 1);
       } else {
-        alert(
-          `No puedes comprar menos de ${isInCart(Items).inicial} articulo/s`
-        );
+        Alerts("warning", "Upss", `No puedes comprar menos de ${isInCart(Items).inicial} articulo/s`, 2000);
       }
     } else {
       setContador(contador > Items.inicial ? contador - 1 : Items.inicial);

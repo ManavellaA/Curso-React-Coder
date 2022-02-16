@@ -4,11 +4,10 @@ import firebase from "firebase";
 import { getFirestore } from "../FireBase/Firebase";
 import { FcApproval } from "react-icons/fc";
 import { context } from "./CartContext";
+import Alerts from "../AuxElements/Alerts";
 
 function Form() {
-  const { cart, ClearCart, setShow, Total } = useContext(context);
-
-  setShow(false);
+  const { cart, ClearCart, Total } = useContext(context);
 
   const [orderId, setOrderId] = useState("");
 
@@ -58,10 +57,10 @@ function Form() {
             console.log(err);
           });
       } else {
-        alert("Por favor ingrese todos los datos");
+        Alerts("error", "No se concretó la compra", "Todos los campos son obligatorios y debes completarlos", 5000);
       }
     } else {
-      alert("No hay productos en el carrito");
+      Alerts("warning", "Upsss", "Todavia no compraste nada, tu carrito esta vacio", 3000);
     }
   }
 

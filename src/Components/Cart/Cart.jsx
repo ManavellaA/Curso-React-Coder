@@ -49,7 +49,7 @@ const AddOn = () => {
               <h5 className="text-center">Total compra ${Total}</h5>
               <div className="d-flex justify-content-around align-items-center mt-5">
                 <Link to={'/Compra'} >
-                  <button className="btn btn-success">
+                  <button className="btn btn-success" onClick={handleClose}>
                     Finalizar compra
                   </button>
                 </Link>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import Loading from "../AuxElements/Loading";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../FireBase/Firebase";
 
@@ -23,17 +24,14 @@ const ItemDetailConteiner = () => {
         console.log(err);
       });
   }, [id]);
+
   return (
     <>
       {getItem.length === 0 ? (
-        <div className="loading show mt-5 row">
-          <div className="spin"></div>
-          <h4 className="text-center mt-3">...Loading...</h4>
-        </div>
+        <Loading />
       ) : (
         <div className="d-flex justify-content-center mt-5">
-          {" "}
-          <ItemDetail Items={getItem} />{" "}
+          <ItemDetail Items={getItem} />
         </div>
       )}
     </>

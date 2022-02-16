@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { context } from "./CartContext";
+import Alerts from "../AuxElements/Alerts";
 
 const Controls = ({ item }) => {
   const { RemoveItem, SubstractItem, AddItem, isInCart } = useContext(context);
@@ -11,13 +12,13 @@ const Controls = ({ item }) => {
     add++;
     item.stock >= add
       ? AddItem(item, add)
-      : alert(`Limite de stock para este articulo`);
+      : Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
   };
   const ClickSubtract = () => {
     if (item.cantidad > 1) {
       SubstractItem(item, item.cantidad - 1);
     } else {
-      alert(`No puedes comprar menos de ${item.inicial} articulo/s`);
+      Alerts("warning", "Upss", `No puedes comprar menos de ${item.inicial} articulo/s`, 2000);
     }
   };
 
