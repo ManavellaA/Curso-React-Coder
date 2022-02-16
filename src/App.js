@@ -12,7 +12,7 @@ function App() {
                                {item: 'Ropa de dama', enlace:'/Tienda/Dama'},
                                {item: 'Ropa de hombre', enlace:'/Tienda/Hombre'},
                                {item: 'Accesorios', enlace:'/Tienda/Accesorios'},
-                               {item: 'Compra', enlace:'/Compra'}];
+                               {item: 'Contacto', enlace:'/Contacto'}];
 
   const brand = 'Ayelen Galvan'
 
