@@ -38,7 +38,6 @@ const CartContext = ({ children }) => {
   const SubstractItem = (item, subs) => {
     setCart(cart.map((e) => (e.id === item.id ? { ...e, cantidad: subs } : e)));
   };
-  const PurchaseCart = () => {};
 
   console.log(cart);
 
@@ -50,7 +49,6 @@ const CartContext = ({ children }) => {
           setCart,
           onAdd,
           ClearCart,
-          PurchaseCart,
           RemoveItem,
           AddItem,
           SubstractItem,

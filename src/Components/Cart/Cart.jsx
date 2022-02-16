@@ -7,7 +7,7 @@ import Controls from "./Controls";
 
 const AddOn = () => {
   
-  const { cart, ClearCart, Total, PurchaseCart, show, setShow } = useContext(context);
+  const { cart, ClearCart, Total, show, setShow } = useContext(context);
 
   const handleClose = () => setShow(false);
 
@@ -48,9 +48,11 @@ const AddOn = () => {
               <br />
               <h5 className="text-center">Total compra ${Total}</h5>
               <div className="d-flex justify-content-around align-items-center mt-5">
-                <button onClick={PurchaseCart} className="btn btn-success">
-                  Finalizar compra
-                </button>
+                <Link to={'/Compra'} >
+                  <button className="btn btn-success">
+                    Finalizar compra
+                  </button>
+                </Link>
                 <button onClick={ClearCart} className="btn btn-danger">
                   Borrar Carrito
                 </button>

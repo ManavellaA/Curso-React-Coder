@@ -4,6 +4,7 @@ import CartContext from './Components/Cart/CartContext';
 import NavBar from "./Components/NavBar/NavBar"; 
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
+import BuyForm from "./Components/Cart/BuyForm";
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
                                {item: 'Ropa de dama', enlace:'/Tienda/Dama'},
                                {item: 'Ropa de hombre', enlace:'/Tienda/Hombre'},
                                {item: 'Accesorios', enlace:'/Tienda/Accesorios'},
-                               {item: 'Contacto', enlace:'/Contacto'}];
+                               {item: 'Compra', enlace:'/Compra'}];
 
   const brand = 'Ayelen Galvan'
 
@@ -33,8 +34,8 @@ function App() {
                 <ItemDetailContainer />
             </Route>
   
-            <Route exact path='/Contacto'>
-              Contacto
+            <Route exact path='/Compra'>
+              <BuyForm />
             </Route>
 
         </Switch>
