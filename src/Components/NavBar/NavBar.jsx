@@ -1,6 +1,5 @@
 import React from "react";
 import "./NavBar.css";
-import CartIcon from "../Cart/CartIcon";
 import { Link } from "react-router-dom";
 
 const NavBar = ({ arrayElementsNavBar, brand }) => {
@@ -15,7 +14,7 @@ const NavBar = ({ arrayElementsNavBar, brand }) => {
       <nav className="navbar navbar-expand-md navbar-light nav">
         <div className="container-fluid justify-content-end">
           <button
-            className="navbar-toggler me-4"
+            className="navbar-toggler me-2"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -38,9 +37,6 @@ const NavBar = ({ arrayElementsNavBar, brand }) => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="d-flex justify-content-start">
-            <CartIcon />
           </div>
         </div>
       </nav>

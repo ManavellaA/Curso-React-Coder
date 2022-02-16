@@ -65,7 +65,7 @@ const AddOn = () => {
                 to={"/"}
                 onClick={handleClose}
                 className="d-flex justify-content-around align-items-center text-decoration-none"
-              >
+                >
                 <button className="btn btn-success mt-3">
                   Buscar algo en la tienda
                 </button>

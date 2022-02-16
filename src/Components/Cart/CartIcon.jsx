@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { BiCart } from "react-icons/bi";
 import Cart from "./Cart";
 import { context } from "./CartContext";
+import './CartIcon.css'
 
 const CartIcon = () => {
   const { cart, setShow } = useContext(context);
@@ -11,15 +12,17 @@ const CartIcon = () => {
   return (
     <>
       <div
-        className="ms-3 me-3"
+        className="icon text-center"
         variant="primary"
         onClick={handleShow}
         type="button"
       >
-        <p className="d-inline"> {cart.length > 0 ? cart.length : ""} </p>
-        <h3 className="d-inline">
-          <BiCart />
-        </h3>
+        <div className="mt-2">
+          <p className="d-inline"> {cart.length > 0 ? cart.length : ""} </p>
+          <h3 className="d-inline">
+            <BiCart />
+          </h3>
+        </div>
       </div>
       <Cart />
     </>

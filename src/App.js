@@ -5,6 +5,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import BuyForm from "./Components/Cart/BuyForm";
+import CartIcon from './Components/Cart/CartIcon';
 
 function App() {
 
@@ -36,9 +37,10 @@ function App() {
   
             <Route exact path='/Compra'>
               <BuyForm />
-            </Route>
+            </Route>           
 
         </Switch>
+      <CartIcon /> 
       </BrowserRouter>
     </CartContext>
   );
