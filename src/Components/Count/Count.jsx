@@ -32,7 +32,7 @@ const Count = ({ Items }) => {
     } else {
       setContador(contador > Items.inicial ? contador - 1 : Items.inicial);
     }
-  };
+  }; 
 
   const Control =
     Items.stock <= 0
