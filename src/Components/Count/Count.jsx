@@ -27,7 +27,7 @@ const Count = ({ Items }) => {
       if (isInCart(Items).cantidad > isInCart(Items).inicial) {
         SubstractItem(Items, isInCart(Items).cantidad - 1);
       } else {
-        Alerts("warning", "Upss", `No puedes comprar menos de ${isInCart(Items).inicial} articulo/s`, 2000);
+        Alerts("warning", "Upss", `No puedes comprar menos de ${isInCart(Items).inicial} articulo`, 2000);
       }
     } else {
       setContador(contador > Items.inicial ? contador - 1 : Items.inicial);

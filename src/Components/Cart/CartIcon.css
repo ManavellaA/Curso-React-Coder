@@ -1,7 +1,7 @@
 .icon-container {
     position:fixed;
-    width:60px;
-    height:60px;
+    width:70px;
+    height:70px;
     bottom:40px;
     right:40px;
     background-color:#bdc00083;
@@ -11,5 +11,5 @@
   }
 
   .icon{
-      margin: 10px 2px 0 0;
+      margin: 14px 2px 0 0;
   }
