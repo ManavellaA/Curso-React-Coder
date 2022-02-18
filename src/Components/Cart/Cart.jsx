@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
 import { context } from "./CartContext";
 import "./Cart.css";
-import Controls from "./Controls";
+// import Controls from "./Controls";
+import Count from '../Count/Count'
 
 const AddOn = () => {
   
@@ -36,7 +37,7 @@ const AddOn = () => {
                       </div>
                     </div>
                     <div className="row justify-content-center align-items-center col-6">
-                      <Controls item={item} />
+                      <Count item={item} CartUse={true} />
                     </div>
                   </div>
                   <h5 className="text-center mb-4">

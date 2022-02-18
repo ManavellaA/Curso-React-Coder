@@ -1,4 +1,5 @@
 import React, { useState, createContext } from "react";
+import Alert from '../AuxElements/Alerts'
 
 export const context = createContext();
 
@@ -10,7 +11,7 @@ const CartContext = ({ children }) => {
   const  onAdd = (Item, contador) => {
     if (cart.length > 0) {
       if (isInCart(Item)) {
-        alert(`Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`);
+        Alert("Error", "Ojooo", `Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`, 2000);
       } else {
         setCart([...cart, { ...Item, cantidad: contador }]);
       }
@@ -19,24 +20,24 @@ const CartContext = ({ children }) => {
     }
   }
 
-  const isInCart = (item) => {
-    return cart.find((e) => e.id === item.id);
+  const isInCart = (Items) => {
+    return cart.find((e) => e.id === Items.id);
   };
 
   const Total = cart.reduce((a, b) => a + b.precio * b.cantidad, 0);
 
-  const RemoveItem = (item) => {
-    setCart(cart.filter((e) => e !== item));
+  const RemoveItem = (Items) => {
+    setCart(cart.filter((e) => e !== Items));
   };
 
   const ClearCart = () => setCart([]);
 
-  const AddItem = (item, add) => {
-    setCart(cart.map((e) => (e.id === item.id ? { ...e, cantidad: add } : e)));
+  const AddItem = (Items, add) => {
+    setCart(cart.map((e) => (e.id === Items.id ? { ...e, cantidad: add } : e)));
   };
 
-  const SubstractItem = (item, subs) => {
-    setCart(cart.map((e) => (e.id === item.id ? { ...e, cantidad: subs } : e)));
+  const SubstractItem = (Items, subs) => {
+    setCart(cart.map((e) => (e.id === Items.id ? { ...e, cantidad: subs } : e)));
   };
 
   console.log(cart);

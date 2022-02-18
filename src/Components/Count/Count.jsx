@@ -2,8 +2,9 @@ import React, { useState, useContext } from "react";
 import { context } from "../Cart/CartContext";
 import Alerts from "../AuxElements/Alerts";
 
-const Count = ({ Items }) => {
-  const { onAdd, setShow, isInCart, AddItem, SubstractItem } =
+const Count = ({ Items, CartUse } ) => {
+  
+  const { onAdd, setShow, isInCart, AddItem, SubstractItem, RemoveItem } =
     useContext(context);
 
   const view = isInCart(Items) ? false : true;
@@ -46,10 +47,14 @@ const Count = ({ Items }) => {
     setContador(Items.inicial);
   };
 
+  const ClickDelete = () => RemoveItem(Items);
+
   const disabledButton =
     Items.stock <= 0 ? "disabled btn btn-success w-50" : "btn btn-success w-50";
 
   const handleShow = () => setShow(true);
+
+  console.log(CartUse)
 
   return (
     <>
@@ -62,18 +67,23 @@ const Count = ({ Items }) => {
           +
         </button>
       </div>
-      {view ? (
+      {(CartUse === true) ?
+      <button onClick={ClickDelete} className="btn btn-danger w-50">
+        Quitar
+      </button>
+      :
+      (view) ? 
         <button onClick={ClickOnAdd} className={disabledButton}>
           Comprar
         </button>
-      ) : (
+      : 
         <button
           className="text-white btn btn-success w-50"
           onClick={handleShow}
         >
           Ir al carrito
         </button>
-      )}
+      }
     </>
   );
 };

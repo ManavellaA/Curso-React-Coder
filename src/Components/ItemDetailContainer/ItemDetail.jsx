@@ -18,7 +18,7 @@ const ItemDetail = ({ Items }) => {
           <div className="col-md-4 col-lg-3 d-flex row justify-content-center align-items-center">
             <h4 className="text-center">Precio: $ {Items.precio} </h4>
             <div className="d-flex row justify-content-center align-items-center">
-              <Count Items={Items} />
+              <Count Items={Items} CartUse={false} />
             </div>
           </div>
           <p className="text-center mt-5">{Items.detalle}</p>
