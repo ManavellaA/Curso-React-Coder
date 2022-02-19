@@ -5,7 +5,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import BuyForm from "./Components/Cart/BuyForm";
-import CartIcon from './Components/Cart/CartIcon';
+import CartWidget from './Components/Cart/CartWidget';
 
 function App() {
 
@@ -40,7 +40,7 @@ function App() {
             </Route>           
 
         </Switch>
-      <CartIcon /> 
+      <CartWidget /> 
       </BrowserRouter>
     </CartContext>
   );

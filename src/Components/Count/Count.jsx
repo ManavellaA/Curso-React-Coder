@@ -2,23 +2,25 @@ import React, { useState, useContext } from "react";
 import { context } from "../Cart/CartContext";
 import Alerts from "../AuxElements/Alerts";
 
-const Count = ({ Items, CartUse }) => {
+const Count = ({ Item , CartUse }) => {
+
+  console.log(Item);
   const { onAdd, setShow, isInCart, AddItem, SubstractItem, RemoveItem } =
     useContext(context);
 
-  const view = isInCart(Items) ? false : true;
+  const view = isInCart(Item) ? false : true;
 
-  const [contador, setContador] = useState(Items.inicial);
+  const [contador, setContador] = useState(Item.inicial);
 
   const ClickAdd = () => {
-    if (isInCart(Items)) {
-      let add = isInCart(Items).cantidad;
+    if (isInCart(Item)) {
+      let add = isInCart(Item).cantidad;
       add++;
-      isInCart(Items).stock >= add
-        ? AddItem(Items, add)
+      isInCart(Item).stock >= add
+        ? AddItem(Item, add)
         : Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
     } else {
-      if (contador < Items.stock) {
+      if (contador < Item.stock) {
         setContador(contador + 1);
       } else {
         setContador(contador);
@@ -28,26 +30,26 @@ const Count = ({ Items, CartUse }) => {
   };
 
   const ClickSubtract = () => {
-    if (isInCart(Items)) {
-      if (isInCart(Items).cantidad > isInCart(Items).inicial) {
-        SubstractItem(Items, isInCart(Items).cantidad - 1);
+    if (isInCart(Item)) {
+      if (isInCart(Item).cantidad > isInCart(Item).inicial) {
+        SubstractItem(Item, isInCart(Item).cantidad - 1);
       } else {
         Alerts(
           "warning",
           "Upss",
-          `No puedes comprar menos de ${isInCart(Items).inicial} articulo`,
+          `No puedes comprar menos de ${isInCart(Item).inicial} articulo`,
           2000
         );
       }
     } else {
-      if (contador > Items.inicial) {
+      if (contador > Item.inicial) {
         setContador(contador - 1);
       } else {
-        setContador(Items.inicial);
+        setContador(Item.inicial);
         Alerts(
           "warning",
           "Upss",
-          `No puedes comprar menos de ${Items.inicial} articulo`,
+          `No puedes comprar menos de ${Item.inicial} articulo`,
           2000
         );
       }
@@ -55,21 +57,21 @@ const Count = ({ Items, CartUse }) => {
   };
 
   const Control =
-    Items.stock <= 0
+    Item.stock <= 0
       ? "Sin Stock"
-      : isInCart(Items)
-      ? isInCart(Items).cantidad
+      : isInCart(Item)
+      ? isInCart(Item).cantidad
       : contador;
 
   const ClickOnAdd = () => {
-    onAdd(Items, contador);
-    setContador(Items.inicial);
+    onAdd(Item, contador);
+    setContador(Item.inicial);
   };
 
-  const ClickDelete = () => RemoveItem(Items);
+  const ClickDelete = () => RemoveItem(Item);
 
   const disabledButton =
-    Items.stock <= 0 ? "disabled btn btn-success w-50" : "btn btn-success w-50";
+    Item.stock <= 0 ? "disabled btn btn-success w-50" : "btn btn-success w-50";
 
   const handleShow = () => setShow(true);
 

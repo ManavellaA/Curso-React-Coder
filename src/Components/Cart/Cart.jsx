@@ -37,7 +37,7 @@ const AddOn = () => {
                       </div>
                     </div>
                     <div className="row justify-content-center align-items-center col-6">
-                      <Count item={item} CartUse={true} />
+                      <Count Item={item} CartUse={true} />
                     </div>
                   </div>
                   <h5 className="text-center mb-4">

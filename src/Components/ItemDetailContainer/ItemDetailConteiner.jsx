@@ -31,7 +31,7 @@ const ItemDetailConteiner = () => {
         <Loading />
       ) : (
         <div className="d-flex justify-content-center mt-5">
-          <ItemDetail Items={getItem} />
+          <ItemDetail Item={getItem} />
         </div>
       )}
     </>
