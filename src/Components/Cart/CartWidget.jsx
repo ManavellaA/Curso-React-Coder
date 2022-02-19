@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { BiCart } from "react-icons/bi";
 import Cart from "./Cart";
 import { context } from "./CartContext";
-import './CartIcon.css'
+import "./CartWidget.css";
 
-const CartIcon = () => {
+const CartWidget = () => {
   const { cart, setShow } = useContext(context);
 
   const handleShow = () => setShow(true);
@@ -29,4 +29,4 @@ const CartIcon = () => {
   );
 };
 
-export default CartIcon;
+export default CartWidget;
