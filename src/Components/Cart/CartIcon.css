@@ -1,15 +1,15 @@
 .icon-container {
     position:fixed;
-    width:70px;
-    height:70px;
+    width:10vh;
+    height:10vh;
     bottom:40px;
     right:40px;
     background-color:#bdc00083;
     color:#FFF;
-    border-radius:50px;
+    border-radius:20vh;
     z-index:100;
   }
 
   .icon{
-      margin: 14px 2px 0 0;
+      margin: 2.4vh 2px 0 0;
   }

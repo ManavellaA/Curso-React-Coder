@@ -2,8 +2,7 @@ import React, { useState, useContext } from "react";
 import { context } from "../Cart/CartContext";
 import Alerts from "../AuxElements/Alerts";
 
-const Count = ({ Items, CartUse } ) => {
-  
+const Count = ({ Items, CartUse }) => {
   const { onAdd, setShow, isInCart, AddItem, SubstractItem, RemoveItem } =
     useContext(context);
 
@@ -19,7 +18,12 @@ const Count = ({ Items, CartUse } ) => {
         ? AddItem(Items, add)
         : Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
     } else {
-      setContador(contador < Items.stock ? contador + 1 : contador);
+      if (contador < Items.stock) {
+        setContador(contador + 1);
+      } else {
+        setContador(contador);
+        Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
+      }
     }
   };
 
@@ -28,12 +32,27 @@ const Count = ({ Items, CartUse } ) => {
       if (isInCart(Items).cantidad > isInCart(Items).inicial) {
         SubstractItem(Items, isInCart(Items).cantidad - 1);
       } else {
-        Alerts("warning", "Upss", `No puedes comprar menos de ${isInCart(Items).inicial} articulo`, 2000);
+        Alerts(
+          "warning",
+          "Upss",
+          `No puedes comprar menos de ${isInCart(Items).inicial} articulo`,
+          2000
+        );
       }
     } else {
-      setContador(contador > Items.inicial ? contador - 1 : Items.inicial);
+      if (contador > Items.inicial) {
+        setContador(contador - 1);
+      } else {
+        setContador(Items.inicial);
+        Alerts(
+          "warning",
+          "Upss",
+          `No puedes comprar menos de ${Items.inicial} articulo`,
+          2000
+        );
+      }
     }
-  }; 
+  };
 
   const Control =
     Items.stock <= 0
@@ -54,7 +73,7 @@ const Count = ({ Items, CartUse } ) => {
 
   const handleShow = () => setShow(true);
 
-  console.log(CartUse)
+  console.log(CartUse);
 
   return (
     <>
@@ -67,23 +86,22 @@ const Count = ({ Items, CartUse } ) => {
           +
         </button>
       </div>
-      {(CartUse === true) ?
-      <button onClick={ClickDelete} className="btn btn-danger w-50">
-        Quitar
-      </button>
-      :
-      (view) ? 
+      {CartUse === true ? (
+        <button onClick={ClickDelete} className="btn btn-danger w-50">
+          Quitar
+        </button>
+      ) : view ? (
         <button onClick={ClickOnAdd} className={disabledButton}>
           Comprar
         </button>
-      : 
+      ) : (
         <button
           className="text-white btn btn-success w-50"
           onClick={handleShow}
         >
           Ir al carrito
         </button>
-      }
+      )}
     </>
   );
 };
