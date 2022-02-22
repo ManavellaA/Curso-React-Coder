@@ -23,12 +23,12 @@ function Form() {
 
     if (cart.length > 0) {
       if (
-        nameRef.current.value !== "" &&
-        addressRef.current.value !== "" &&
-        cityRef.current.value !== "" &&
-        stateRef.current.value !== "" &&
-        emailRef.current.value !== "" &&
-        mobileRef.current.value !== ""
+        nameRef.current.value &&
+        addressRef.current.value &&
+        cityRef.current.value &&
+        stateRef.current.value &&
+        emailRef.current.value &&
+        mobileRef.current.value
       ) {
         const orders = db.collection("orders");
 
@@ -57,10 +57,20 @@ function Form() {
             console.log(err);
           });
       } else {
-        Alerts("error", "No se concretó la compra", "Todos los campos son obligatorios y debes completarlos", 5000);
+        Alerts(
+          "error",
+          "No se concretó la compra",
+          "Todos los campos son obligatorios y debes completarlos",
+          5000
+        );
       }
     } else {
-      Alerts("warning", "Upsss", "Todavia no compraste nada, tu carrito esta vacio", 3000);
+      Alerts(
+        "warning",
+        "Upsss",
+        "Todavia no compraste nada, tu carrito esta vacio",
+        3000
+      );
     }
   }
 

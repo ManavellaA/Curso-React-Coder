@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
 import { context } from "./CartContext";
 import "./Cart.css";
-// import Controls from "./Controls";
 import Count from '../Count/Count'
 
 const AddOn = () => {
@@ -23,7 +22,7 @@ const AddOn = () => {
           {cart.length > 0 ? (
             <>
               {cart.map((item) => (
-                <>
+                <div key={item.id}>
                   <div className="row mb-2">
                     <div className="col-6">
                       <p className="mb-0 text-center">{item.nombre}</p>
@@ -44,7 +43,7 @@ const AddOn = () => {
                     Precio ${item.precio * item.cantidad}{" "}
                   </h5>
                   <hr />
-                </>
+                </div>
               ))}
               <br />
               <h5 className="text-center">Total compra ${Total}</h5>

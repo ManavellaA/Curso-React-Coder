@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react";
-import Alert from '../AuxElements/Alerts'
+import Alert from "../AuxElements/Alerts";
 
 export const context = createContext();
 
@@ -8,17 +8,22 @@ const CartContext = ({ children }) => {
 
   const [show, setShow] = useState(false);
 
-  const  onAdd = (Item, contador) => {
+  const onAdd = (Item, contador) => {
     if (cart.length > 0) {
       if (isInCart(Item)) {
-        Alert("Error", "Ojooo", `Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`, 2000);
+        Alert(
+          "Error",
+          "Ojooo",
+          `Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`,
+          2000
+        );
       } else {
         setCart([...cart, { ...Item, cantidad: contador }]);
       }
     } else {
       setCart([{ ...Item, cantidad: contador }]);
     }
-  }
+  };
 
   const isInCart = (Items) => {
     return cart.find((e) => e.id === Items.id);
@@ -37,10 +42,10 @@ const CartContext = ({ children }) => {
   };
 
   const SubstractItem = (Items, subs) => {
-    setCart(cart.map((e) => (e.id === Items.id ? { ...e, cantidad: subs } : e)));
+    setCart(
+      cart.map((e) => (e.id === Items.id ? { ...e, cantidad: subs } : e))
+    );
   };
-
-  console.log(cart);
 
   return (
     <>
@@ -56,7 +61,7 @@ const CartContext = ({ children }) => {
           setShow,
           show,
           isInCart,
-          Total
+          Total,
         }}
       >
         {children}

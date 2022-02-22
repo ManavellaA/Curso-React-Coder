@@ -30,7 +30,7 @@ const NavBar = ({ arrayElementsNavBar, brand }) => {
           >
             <ul className="navbar-nav align-items-center justify-content-center">
               {arrayElementsNavBar.map((items) => (
-                <li className="nav-item">
+                <li className="nav-item" key={items.id}>
                   <Link className="nav-link itemNav" to={items.enlace}>
                     {items.item}
                   </Link>

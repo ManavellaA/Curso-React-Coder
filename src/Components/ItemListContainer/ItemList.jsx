@@ -8,7 +8,7 @@ const ItemList = (props) => {
       {props.Productos.length > 0 ? (
         <div className="d-flex justify-content-center flex-wrap container">
           {props.Productos.map((element) => (
-            <Item items={element} />
+            <Item items={element} key={element.id} />
           ))}
         </div>
       ) : (

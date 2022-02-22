@@ -1,10 +1,9 @@
 import React, { useState, useContext } from "react";
 import { context } from "../Cart/CartContext";
 import Alerts from "../AuxElements/Alerts";
+import './Count.css'
 
-const Count = ({ Item , CartUse }) => {
-
-  console.log(Item);
+const Count = ({ Item, CartUse }) => {
   const { onAdd, setShow, isInCart, AddItem, SubstractItem, RemoveItem } =
     useContext(context);
 
@@ -75,11 +74,9 @@ const Count = ({ Item , CartUse }) => {
 
   const handleShow = () => setShow(true);
 
-  console.log(CartUse);
-
   return (
-    <>
-      <div className="d-flex justify-content-center align-items-center">
+    <div className="div_container">
+      <div className="div_buttons">
         <button onClick={ClickSubtract} className="btn btn-success">
           -
         </button>
@@ -104,7 +101,7 @@ const Count = ({ Item , CartUse }) => {
           Ir al carrito
         </button>
       )}
-    </>
+    </div>
   );
 };
 export default Count;
