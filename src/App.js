@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import CartContext from './Components/Cart/CartContext';
 import NavBar from "./Components/NavBar/NavBar"; 
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailConteiner';
