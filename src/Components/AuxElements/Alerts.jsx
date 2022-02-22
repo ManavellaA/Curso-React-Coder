@@ -2,16 +2,14 @@ import Swal from 'sweetalert2'
 
 const Alerts = (type, headligth, paragraph, time) => {  
      
-    let timerInterval
     Swal.fire({
+      position: 'top',
       icon: type,
       title: headligth,
-      html: paragraph,
+      text: paragraph,
+      showConfirmButton: false,
       timer: time,
-      timerProgressBar: true,
-      willClose: () => {
-        clearInterval(timerInterval)
-      }
+      timerProgressBar: true
     })
 }
 

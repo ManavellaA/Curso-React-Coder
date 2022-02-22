@@ -95,7 +95,7 @@ const Count = ({ Item, CartUse }) => {
         </button>
       ) : (
         <button
-          className="text-white btn btn-success w-50"
+          className="text-white btn btn-success"
           onClick={handleShow}
         >
           Ir al carrito
