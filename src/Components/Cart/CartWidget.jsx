@@ -18,7 +18,7 @@ const CartWidget = () => {
       >
         <div className="icon">
           <p className="d-inline"> {cart.length > 0 ? cart.length : ""} </p>
-          <h3 className="d-inline">
+          <h3 className="d-inline ">
             <svg
               stroke="currentColor"
               fill="currentColor"

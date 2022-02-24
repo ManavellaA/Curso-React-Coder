@@ -10,9 +10,7 @@ const CartContext = ({ children }) => {
 
   const onAdd = (Item, contador) => {
     if (cart.length > 0) {
-      if (isInCart(Item)) {
-        setCart([...cart, { ...Item, cantidad: contador }]);
-      } 
+        setCart([...cart, { ...Item, cantidad: contador }]);  
     } else {
       setCart([{ ...Item, cantidad: contador }]);
     }
