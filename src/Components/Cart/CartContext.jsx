@@ -1,6 +1,5 @@
 import React, { useState, createContext } from "react";
 import { getFirestore } from "../FireBase/Firebase";
-import Alert from "../AuxElements/Alerts";
 
 export const context = createContext();
 
@@ -12,19 +11,12 @@ const CartContext = ({ children }) => {
   const onAdd = (Item, contador) => {
     if (cart.length > 0) {
       if (isInCart(Item)) {
-        Alert(
-          "Error",
-          "Ojooo",
-          `Ya compraste el articulo "${Item.nombre}" Marca: ${Item.marca}`,
-          2000
-        );
-      } else {
         setCart([...cart, { ...Item, cantidad: contador }]);
-      }
+      } 
     } else {
       setCart([{ ...Item, cantidad: contador }]);
     }
-  };
+  }
 
   const isInCart = (Items) => {
     return cart.find((e) => e.id === Items.id);
@@ -38,14 +30,15 @@ const CartContext = ({ children }) => {
 
   const ClearCart = () => setCart([]);
 
-  const AddItem = (Items, add) => {
-    setCart(cart.map((e) => (e.id === Items.id ? { ...e, cantidad: add } : e)));
+  const AddItem = (Item) => {
+    let add = isInCart(Item).cantidad;
+    add++;
+    setCart(cart.map((e) => (e.id === Item.id ? { ...e, cantidad: add } : e)));
   };
 
-  const SubstractItem = (Items, subs) => {
-    setCart(
-      cart.map((e) => (e.id === Items.id ? { ...e, cantidad: subs } : e))
-    );
+  const SubstractItem = (Item) => {
+    let subs = isInCart(Item).cantidad - 1
+    setCart(cart.map((e) => (e.id === Item.id ? { ...e, cantidad: subs } : e)));
   };
 
   const ReStock = () => {

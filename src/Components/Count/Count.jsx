@@ -1,56 +1,45 @@
 import React, { useState, useContext } from "react";
 import { context } from "../Cart/CartContext";
 import Alerts from "../AuxElements/Alerts";
-import './Count.css'
+import "./Count.css";
 
 const Count = ({ Item, CartUse }) => {
-  const { onAdd, setShow, isInCart, AddItem, SubstractItem, RemoveItem } =
-    useContext(context);
+  const { onAdd, setShow, isInCart, AddItem, SubstractItem, RemoveItem } = useContext(context);
 
   const view = isInCart(Item) ? false : true;
 
   const [contador, setContador] = useState(Item.inicial);
 
   const ClickAdd = () => {
+    let msj = () =>
+      Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
     if (isInCart(Item)) {
-      let add = isInCart(Item).cantidad;
-      add++;
-      isInCart(Item).stock >= add
-        ? AddItem(Item, add)
-        : Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
+      Item.stock > isInCart(Item).cantidad 
+      ? AddItem(Item) 
+      : msj();
     } else {
       if (contador < Item.stock) {
         setContador(contador + 1);
       } else {
         setContador(contador);
-        Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
+        msj();
       }
     }
   };
 
   const ClickSubtract = () => {
+    let msj = (e) =>
+      Alerts("warning","Upss",`No puedes comprar menos de ${e} articulo`,2000);
     if (isInCart(Item)) {
-      if (isInCart(Item).cantidad > isInCart(Item).inicial) {
-        SubstractItem(Item, isInCart(Item).cantidad - 1);
-      } else {
-        Alerts(
-          "warning",
-          "Upss",
-          `No puedes comprar menos de ${isInCart(Item).inicial} articulo`,
-          2000
-        );
-      }
+      isInCart(Item).cantidad > Item.inicial
+        ? SubstractItem(Item)
+        : msj(isInCart(Item).inicial);
     } else {
       if (contador > Item.inicial) {
         setContador(contador - 1);
       } else {
         setContador(Item.inicial);
-        Alerts(
-          "warning",
-          "Upss",
-          `No puedes comprar menos de ${Item.inicial} articulo`,
-          2000
-        );
+        msj(Item.inicial);
       }
     }
   };
@@ -69,8 +58,7 @@ const Count = ({ Item, CartUse }) => {
 
   const ClickDelete = () => RemoveItem(Item);
 
-  const disabledButton =
-    Item.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
+  const disabledButton = Item.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
 
   const handleShow = () => setShow(true);
 
@@ -86,7 +74,7 @@ const Count = ({ Item, CartUse }) => {
         </button>
       </div>
       {CartUse === true ? (
-        <button onClick={ClickDelete} className="btn btn-danger w-50"> 
+        <button onClick={ClickDelete} className="btn btn-danger w-50">
           Quitar
         </button>
       ) : view ? (
@@ -94,10 +82,7 @@ const Count = ({ Item, CartUse }) => {
           Comprar
         </button>
       ) : (
-        <button
-          className="text-white btn btn-success"
-          onClick={handleShow}
-        >
+        <button className="text-white btn btn-success" onClick={handleShow}>
           Ir al carrito
         </button>
       )}
