@@ -11,8 +11,7 @@ const Count = ({ Item, CartUse }) => {
   const [contador, setContador] = useState(Item.inicial);
 
   const ClickAdd = () => {
-    let msj = () =>
-      Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
+    let msj = () => Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
     if (isInCart(Item)) {
       Item.stock > isInCart(Item).cantidad 
       ? AddItem(Item) 
@@ -28,8 +27,7 @@ const Count = ({ Item, CartUse }) => {
   };
 
   const ClickSubtract = () => {
-    let msj = (e) =>
-      Alerts("warning","Upss",`No puedes comprar menos de ${e} articulo`,2000);
+    let msj = (e) => Alerts("warning","Upss",`No puedes comprar menos de ${e} articulo`,2000);
     if (isInCart(Item)) {
       isInCart(Item).cantidad > Item.inicial
         ? SubstractItem(Item)

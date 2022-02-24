@@ -1,5 +1,4 @@
 import React, { useState, createContext } from "react";
-import { getFirestore } from "../FireBase/Firebase";
 
 export const context = createContext();
 
@@ -35,15 +34,14 @@ const CartContext = ({ children }) => {
   };
 
   const SubstractItem = (Item) => {
-    let subs = isInCart(Item).cantidad - 1
-    setCart(cart.map((e) => (e.id === Item.id ? { ...e, cantidad: subs } : e)));
+    let substract = isInCart(Item).cantidad - 1
+    setCart(cart.map((e) => (e.id === Item.id ? { ...e, cantidad: substract } : e)));
   };
 
-  const ReStock = () => {
-    const db = getFirestore();
+  const ReStock = (dataBase) => {
     cart.map((e) => {
       let newStock = e.stock - e.cantidad;
-      const item = db.collection("items").doc(e.id);
+      const item = dataBase.collection("items").doc(e.id);
       item.update({stock:newStock})
           .then(() => {
               console.log(`Actualizacion del stock! ${e.id} `);

@@ -18,7 +18,7 @@ function Form() {
   const mobileRef = useRef();
 
   function handleClick() {
-    const db = getFirestore();
+    const dataBase = getFirestore();
 
     if (cart.length > 0) {
       if (
@@ -29,7 +29,7 @@ function Form() {
         emailRef.current.value &&
         mobileRef.current.value
       ) {
-        const orders = db.collection("orders");
+        const orders = dataBase.collection("orders");
 
         const OC = {
           buyer: {
@@ -50,7 +50,7 @@ function Form() {
           .then(({ id }) => {
             setOrderId(id);
             console.log(`Ingreso la OC: ${id}`);
-            ReStock();
+            ReStock(dataBase);
             ClearCart();
           })
           .catch((err) => {
