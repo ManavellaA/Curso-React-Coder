@@ -70,23 +70,23 @@ const Count = ({ Item, CartUse }) => {
   const ClickDelete = () => RemoveItem(Item);
 
   const disabledButton =
-    Item.stock <= 0 ? "disabled btn btn-success w-50" : "btn btn-success w-50";
+    Item.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
 
   const handleShow = () => setShow(true);
 
   return (
     <div className="div_container">
       <div className="div_buttons">
-        <button onClick={ClickSubtract} className="btn btn-success">
+        <button onClick={ClickSubtract} className={disabledButton}>
           -
         </button>
         <h2 className="text-center ms-4 me-4 mt-3 mb-3">{Control}</h2>
-        <button onClick={ClickAdd} className="btn btn-success">
+        <button onClick={ClickAdd} className={disabledButton}>
           +
         </button>
       </div>
       {CartUse === true ? (
-        <button onClick={ClickDelete} className="btn btn-danger w-50">
+        <button onClick={ClickDelete} className="btn btn-danger w-50"> 
           Quitar
         </button>
       ) : view ? (

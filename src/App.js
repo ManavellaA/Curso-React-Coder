@@ -13,8 +13,8 @@ function App() {
   const arrayElementsNavBar = [{id:1 , item: 'Inicio', enlace:'/'},
                                {id:2 , item: 'Ropa de dama', enlace:'/Tienda/Dama'},
                                {id:3 , item: 'Ropa de hombre', enlace:'/Tienda/Hombre'},
-                               {id:4 , item: 'Accesorios', enlace:'/Tienda/Accesorios'},
-                               {id:5 , item: 'Contacto', enlace:'/Contacto'}];
+                               {id:4 , item: 'Accesorios', enlace:'/Tienda/Accesorios'}
+                              ];
 
   const brand = 'Ayelen Galvan'
 
