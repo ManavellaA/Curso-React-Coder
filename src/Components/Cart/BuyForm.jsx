@@ -102,7 +102,7 @@ function Form() {
           <h3 className="text-center mt-3">Orden N°</h3>
           <h3 className="text-center">"{orderId}"</h3>
           <h5 className="text-center mt-2 ">
-            En breve nos contactactaremos con usted para finalizar la compra.
+            En breve nos contactactaremos con usted para concretar la compra.
           </h5>
           <div className="text-center mt-5">
             <Link to={"/"}>
