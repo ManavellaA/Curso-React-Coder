@@ -66,7 +66,7 @@ function Form() {
       }
     } else {
       Alerts(
-        "warning",
+        "error",
         "Upsss",
         "Todavia no compraste nada, tu carrito esta vacio",
         3000
