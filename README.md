@@ -1,6 +1,4 @@
-# Ayelen Galvan DM
-
-Tienda e-commerce, ropa de tendencia y accesorios.
+# E-commerce de ropa y accesorios.
 
 ## Implementación
 
@@ -14,7 +12,6 @@ que iteractuan con la Base de Datos).
 
 ## Ambiente de ejecución
 
-
 Utilizando NPM travez del comando
 
 ```bash
@@ -23,7 +20,6 @@ npm start
 
 Se ejecuta la aplicación en el modo de desarrollo.\
 Dentro de la dirección [http://localhost:3000](http://localhost:3000) en tu navegador.
-
 
 ## Dependencias
 
