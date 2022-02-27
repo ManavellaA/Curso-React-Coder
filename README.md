@@ -1,4 +1,4 @@
-# E-commerce de ropa y accesorios.
+# E-commerce de ropa y accesorios
 
 ## Implementación
 
@@ -9,6 +9,9 @@ SweetAlert2 para la interaccion de mensajes con el usuario.
 El proyecto utiliza el Hook 'Context' el cual contiene las funcionalidades criticas 
 dentro del mismo (manejo de estados globales, calculos del carro de compras y funcionalidades
 que iteractuan con la Base de Datos).
+
+# Breve resumen
+
 
 ## Ambiente de ejecución
 
