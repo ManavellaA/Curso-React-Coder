@@ -1,4 +1,6 @@
-# E-commerce de ropa y accesorios
+# Ayelen Galvan DM
+
+Tienda e-commerce, ropa de tendencia y accesorios.
 
 ## Implementación
 
@@ -6,12 +8,8 @@ El proyecto esta integramente hecho en React, utilizando Bootstrap para la parte
 React-Router-Dom para la navegabilidad, Firebase para el manejo de la base de datos y 
 SweetAlert2 para la interaccion de mensajes con el usuario.
 
-El proyecto utiliza el Hook 'Context' el cual contiene las funcionalidades criticas 
-dentro del mismo (manejo de estados globales, calculos del carro de compras y funcionalidades
-que iteractuan con la Base de Datos).
-
-# Breve resumen
-
+## Deploy actual de la Pagina (Netlify) 
+[Ayelen Galvan DM](https://ayelengalvan.netlify.app)
 
 ## Ambiente de ejecución
 
@@ -23,6 +21,16 @@ npm start
 
 Se ejecuta la aplicación en el modo de desarrollo.\
 Dentro de la dirección [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+o
+
+a travez del comando
+
+```bash
+npm run build
+```
+
+Para compilar el proyecto
 
 ## Dependencias
 
