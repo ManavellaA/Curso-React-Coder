@@ -23,24 +23,26 @@ const AddOn = () => {
             <>
               {cart.map((item) => (
                 <div key={item.id}>
-                  <div className="row mb-2">
-                    <div className="col-6">
-                      <p className="mb-0 text-center">{item.nombre}</p>
-                      <p className="mt-0 text-center">Marca: {item.marca}</p>
-                      <div className="text-center">
-                        <img
-                          src={item.img}
-                          className="img-fluid"
-                          alt={item.nombre}
-                        />
+                  <div className="row mb-2">  
+                      <div className="col-6">
+                        <Link to={`/Tienda/Item/${item.id}`} onClick={handleClose} className="text-decoration-none">
+                          <p className="mb-0 text-center text-black">{item.nombre}</p>
+                          <p className="mt-0 text-center text-black">Marca: {item.marca}</p>
+                          <div className="text-center">
+                              <img
+                                src={item.img}
+                                className="img-fluid"
+                                alt={item.nombre}
+                              />
+                          </div>
+                        </Link>
                       </div>
-                    </div>
                     <div className="row justify-content-center align-items-center col-6">
                       <Count Item={item} CartUse={true} />
                     </div>
                   </div>
                   <h5 className="text-center mb-4">
-                    Precio ${item.precio * item.cantidad}{" "}
+                    Precio ${item.precio * item.cantidad}
                   </h5>
                   <hr />
                 </div>
@@ -53,7 +55,7 @@ const AddOn = () => {
                     Finalizar compra
                   </button>
                 </Link>
-                <button onClick={ClearCart} className="btn btn-danger">
+                <button onClick={ClearCart} className="text-danger btn btn-danger">
                   Borrar Carrito
                 </button>
               </div>

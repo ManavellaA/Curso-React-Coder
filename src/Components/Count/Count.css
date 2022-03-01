@@ -13,3 +13,9 @@
     align-items: center;
     width: 40%;
 }
+
+button{
+    background-color: #edac9d7b !important;
+    border: none !important;
+    color: black !important;
+}

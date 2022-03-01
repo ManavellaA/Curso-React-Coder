@@ -19,58 +19,54 @@ function Form() {
 
   function handleClick() {
     const dataBase = getFirestore();
-
+     
     if (cart.length > 0) {
       if (
         nameRef.current.value &&
         addressRef.current.value &&
         cityRef.current.value &&
         stateRef.current.value &&
-        emailRef.current.value &&
         mobileRef.current.value
       ) {
-        const orders = dataBase.collection("orders");
+        if(
+          emailRef.current.value.indexOf('@') !== -1 && 
+          emailRef.current.value.indexOf('.') !== -1
+        ) {
+          const orders = dataBase.collection("orders");
 
-        const OC = {
-          buyer: {
-            name: nameRef.current.value,
-            address: addressRef.current.value,
-            city: cityRef.current.value,
-            state: stateRef.current.value,
-            email: emailRef.current.value,
-            mobile: mobileRef.current.value,
-          },
-          date: firebase.firestore.Timestamp.fromDate(new Date()),
-          items: cart,
-          total: Total,
-        };
+          const OC = {
+            buyer: {
+              name: nameRef.current.value,
+              address: addressRef.current.value,
+              city: cityRef.current.value,
+              state: stateRef.current.value,
+              email: emailRef.current.value,
+              mobile: mobileRef.current.value,
+            },
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            items: cart,
+            total: Total,
+          };
 
-        orders
-          .add(OC)
-          .then(({ id }) => {
-            setOrderId(id);
-            console.log(`Ingreso la OC: ${id}`);
-            ReStock(dataBase);
-            ClearCart();
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      } else {
-        Alerts(
-          "error",
-          "No se concretó la compra",
-          "Todos los campos son obligatorios y debes completarlos",
-          5000
-        );
+          orders
+            .add(OC)
+            .then(({ id }) => {
+              setOrderId(id);
+              console.log(`Ingreso la OC: ${id}`);
+              ReStock(dataBase);
+              ClearCart();
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        } else{
+          Alerts("warning", "Upss", 'El correo ingresado no es valido', 4000);
+        }
+      } else{
+        Alerts("error", "Upss", "Te falta completar campos del formulario", 4000);
       }
-    } else {
-      Alerts(
-        "error",
-        "Upsss",
-        "Todavia no compraste nada, tu carrito esta vacio",
-        3000
-      );
+    } else{
+      Alerts("warning", "Upss", "El carrito esta vacio, debes comprar algo!!", 4000);
     }
   }
 
@@ -99,10 +95,15 @@ function Form() {
             </svg>
           </div>
           <h2 className="text-center mt-3">Reserva Exitosa!</h2>
-          <h3 className="text-center mt-3">Orden N°</h3>
-          <h3 className="text-center">"{orderId}"</h3>
-          <h5 className="text-center mt-2 ">
-            En breve nos contactactaremos con usted para concretar la compra.
+          <div style={{color:'green'}}>  
+            <h3 className="text-center mt-5">Orden N°</h3>
+            <h3 className="text-center">"{orderId}"</h3>
+          </div>
+          <h5 className="text-center mt-5 ">
+            Gracias por tu compra!!
+          </h5>
+          <h5 className="text-center">
+            Te enviamos un correo para con los pasos para finalizar tu compra.
           </h5>
           <div className="text-center mt-5">
             <Link to={"/"}>
@@ -140,7 +141,7 @@ function Form() {
             />
             <input
               placeholder="Email"
-              type="email"
+              type="text"
               className="mt-3 form-control"
               ref={emailRef}
             />
@@ -156,7 +157,7 @@ function Form() {
               Reservar compra!!
             </button>
           </div>
-        </>
+        </>  
       )}
     </>
   );

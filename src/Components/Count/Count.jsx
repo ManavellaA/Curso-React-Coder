@@ -72,7 +72,7 @@ const Count = ({ Item, CartUse }) => {
         </button>
       </div>
       {CartUse === true ? (
-        <button onClick={ClickDelete} className="btn btn-danger w-50">
+        <button onClick={ClickDelete} className="text-danger btn btn-danger w-50">
           Quitar
         </button>
       ) : view ? (
@@ -80,7 +80,7 @@ const Count = ({ Item, CartUse }) => {
           Comprar
         </button>
       ) : (
-        <button className="text-white btn btn-success" onClick={handleShow}>
+        <button className="btn btn-success" onClick={handleShow}>
           Ir al carrito
         </button>
       )}
