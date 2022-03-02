@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=DM+Sans&family=Dancing+Script&family=Lora:ital@1&family=Nanum+Myeongjo:wght@700&display=swap');
 
 .div__footer {
-    margin: 3em 0 0 0 ;
+    margin: 18em 0 0 0 ;
     height:12vh; 
     background-color:rgba(248, 141, 70, 0.268);
     display:grid;
@@ -40,4 +40,25 @@
     align-items:center;
     margin: 0 1em 0.1em 0 ;
     padding: 0;
+}
+
+.pinterest :hover{
+    color: black;
+    border-radius: 1em;
+    animation: pulse 1s infinite;
+}
+
+.instagram :hover{
+    color: black;
+    border-radius: 0.6em;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: black 0 0 0 0;
+    }
+    75% {
+        box-shadow: rgba(0, 0, 0, 0) 0 0 0 0.8em;
+    }
 }
