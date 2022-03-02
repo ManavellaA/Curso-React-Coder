@@ -6,7 +6,10 @@ Tienda e-commerce, ropa de tendencia y accesorios.
 
 El proyecto esta integramente hecho en React, utilizando Bootstrap para la parte visual, 
 React-Router-Dom para la navegabilidad, Firebase para el manejo de la base de datos y 
-SweetAlert2 para la interaccion de mensajes con el usuario.
+SweetAlert2 para la interaccion de mensajes con el usuario. 
+Utiliza el Hook 'Context' el cual contiene las funcionalidades criticas dentro del 
+mismo (manejo de estados globales, calculos del carro de compras y funcionalidades que 
+iteractuan con la Base de Datos).
 
 ## Deploy actual de la Pagina (Netlify) 
 [Ayelen Galvan DM](https://ayelengalvan.netlify.app)
