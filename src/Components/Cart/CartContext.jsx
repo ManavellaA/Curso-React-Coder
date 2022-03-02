@@ -39,13 +39,12 @@ const CartContext = ({ children }) => {
   };
 
   const reStock = (dataBase) => {
-    cart.map((e) => {
+    cart.map(function (e) {
       let newStock = e.stock - e.cantidad;
       const item = dataBase.collection("items").doc(e.id);
       item.update({stock:newStock})
-          .catch((err) => {
-              console.log(err);
-          });
+        .catch((err) => console.log(err));
+      return console.log(newStock);
     });
   };
 
