@@ -6,7 +6,7 @@ import { context } from "./CartContext";
 import Alerts from "../AuxElements/Alerts";
 
 function Form() {
-  const { cart, ClearCart, Total, ReStock } = useContext(context);
+  const { cart, clearCart, total, reStock } = useContext(context);
 
   const [orderId, setOrderId] = useState("");
 
@@ -45,15 +45,15 @@ function Form() {
             },
             date: firebase.firestore.Timestamp.fromDate(new Date()),
             items: cart,
-            total: Total,
+            total: total,
           };
 
           orders
             .add(OC)
             .then(({ id }) => {
               setOrderId(id);
-              ReStock(dataBase);
-              ClearCart();
+              reStock(dataBase);
+              clearCart();
             })
             .catch((err) => {
               console.log(err);

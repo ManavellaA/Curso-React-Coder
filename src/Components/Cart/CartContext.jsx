@@ -43,9 +43,6 @@ const CartContext = ({ children }) => {
       let newStock = e.stock - e.cantidad;
       const item = dataBase.collection("items").doc(e.id);
       item.update({stock:newStock})
-          .then(() => {
-              console.log(`Actualizacion del stock! ${e.id} `);
-          })
           .catch((err) => {
               console.log(err);
           });
