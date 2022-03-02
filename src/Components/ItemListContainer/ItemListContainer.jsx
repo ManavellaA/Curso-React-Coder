@@ -8,9 +8,9 @@ const ItemListContainer = () => {
   const [arrayProductos, setArrayProductos] = useState([]);
 
   useEffect(() => {
-    const DataBase = getFirestore();
+    const dataBase = getFirestore();
 
-    const items = DataBase.collection("items");
+    const items = dataBase.collection("items");
 
     items
       .get()

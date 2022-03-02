@@ -9,11 +9,11 @@ const ItemDetailConteiner = () => {
   const [getItem, setGetItem] = useState([]);
 
   useEffect(() => {
-    const DataBase = getFirestore();
+    const dataBase = getFirestore();
 
-    const Collecion = DataBase.collection("items");
+    const collecion = dataBase.collection("items");
 
-    const item = Collecion.doc(id);
+    const item = collecion.doc(id);
 
     item
       .get()

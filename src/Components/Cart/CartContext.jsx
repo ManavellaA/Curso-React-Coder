@@ -19,26 +19,26 @@ const CartContext = ({ children }) => {
     return cart.find((e) => e.id === Items.id);
   };
 
-  const Total = cart.reduce((a, b) => a + b.precio * b.cantidad, 0);
+  const total = cart.reduce((a, b) => a + b.precio * b.cantidad, 0);
 
-  const RemoveItem = (Items) => {
+  const removeItem = (Items) => {
     setCart(cart.filter((e) => e !== Items));
   };
 
-  const ClearCart = () => setCart([]);
+  const clearCart = () => setCart([]);
 
-  const AddItem = (Item) => {
+  const addItem = (Item) => {
     let add = isInCart(Item).cantidad;
     add++;
     setCart(cart.map((e) => (e.id === Item.id ? { ...e, cantidad: add } : e)));
   };
 
-  const SubstractItem = (Item) => {
+  const substractItem = (Item) => {
     let substract = isInCart(Item).cantidad - 1
     setCart(cart.map((e) => (e.id === Item.id ? { ...e, cantidad: substract } : e)));
   };
 
-  const ReStock = (dataBase) => {
+  const reStock = (dataBase) => {
     cart.map((e) => {
       let newStock = e.stock - e.cantidad;
       const item = dataBase.collection("items").doc(e.id);
@@ -59,15 +59,15 @@ const CartContext = ({ children }) => {
           cart,
           setCart,
           onAdd,
-          ClearCart,
-          RemoveItem,
-          AddItem,
-          SubstractItem,
+          clearCart,
+          removeItem,
+          addItem,
+          substractItem,
           setShow,
           show,
           isInCart,
-          Total,
-          ReStock,
+          total,
+          reStock,
         }}
       >
         {children}

@@ -7,7 +7,7 @@ import Count from '../Count/Count'
 
 const AddOn = () => {
   
-  const { cart, ClearCart, Total, show, setShow } = useContext(context);
+  const { cart, clearCart, total, show, setShow } = useContext(context);
 
   const handleClose = () => setShow(false);
 
@@ -48,14 +48,14 @@ const AddOn = () => {
                 </div>
               ))}
               <br />
-              <h5 className="text-center">Total compra ${Total}</h5>
+              <h5 className="text-center">total compra ${total}</h5>
               <div className="d-flex justify-content-around align-items-center mt-5">
                 <Link to={'/Compra'} >
                   <button className="btn btn-success" onClick={handleClose}>
                     Finalizar compra
                   </button>
                 </Link>
-                <button onClick={ClearCart} className="text-danger btn btn-danger">
+                <button onClick={clearCart} className="text-danger btn btn-danger">
                   Borrar Carrito
                 </button>
               </div>
