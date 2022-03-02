@@ -12,10 +12,10 @@ import CartWidget from './Components/Cart/CartWidget';
 function App() {
 
   const arrayElementsNavBar = [
-  { id: 1, item: 'Inicio', enlace: '/' },
-  { id: 2, item: 'Ropa de dama', enlace: '/Tienda/Dama' },
-  { id: 3, item: 'Ropa de hombre', enlace: '/Tienda/Hombre' },
-  { id: 4, item: 'Accesorios', enlace: '/Tienda/Accesorios' }
+    { id: 1, item: 'Inicio', enlace: '/' },
+    { id: 2, item: 'Ropa de dama', enlace: '/Tienda/Dama' },
+    { id: 3, item: 'Ropa de hombre', enlace: '/Tienda/Hombre' },
+    { id: 4, item: 'Accesorios', enlace: '/Tienda/Accesorios' }
   ];
 
   const brand = 'Ayelen Galvan'
@@ -43,8 +43,8 @@ function App() {
           </Route>
 
         </Switch>
-        <CartWidget />
         <Footer />
+        <CartWidget />
       </BrowserRouter>
     </CartContext>
   );
