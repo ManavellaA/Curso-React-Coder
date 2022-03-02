@@ -59,7 +59,7 @@ function Form() {
               console.log(err);
             });
         } else {
-          Alerts("warning", "Upss", "El correo ingresado no es valido", 4000);
+          Alerts("warning", "Upss", "El correo ingresado no es valido. ej:jhon@doe.com", 4000);
         }
       } else {
         Alerts(
