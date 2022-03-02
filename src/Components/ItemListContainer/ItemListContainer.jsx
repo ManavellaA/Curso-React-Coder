@@ -15,7 +15,7 @@ const ItemListContainer = () => {
     items
       .get()
       .then((querySnapShot) => {
-        if (category > "") {
+        if (category) {
           let producto = querySnapShot.docs.map((doc) => {
             return { id: doc.id, ...doc.data() };
           });

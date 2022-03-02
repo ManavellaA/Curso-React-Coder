@@ -59,7 +59,7 @@ function Form() {
               console.log(err);
             });
         } else {
-          Alerts("warning", "Upss", "El correo ingresado no es valido. ej:jhon@doe.com", 4000);
+          Alerts("warning", "Upss", "El correo ingresado no es valido", 4000);
         }
       } else {
         Alerts(
@@ -105,13 +105,13 @@ function Form() {
           </div>
           <h2 className="text-center mt-3">Reserva Exitosa!</h2>
           <div style={{ color: "green" }}>
-            <h3 className="text-center mt-5">Orden N°</h3>
+            <h3 className="text-center mt-5">Ticket id</h3>
             <h3 className="text-center">"{orderId}"</h3>
           </div>
-          <h5 className="text-center mt-5 ">Gracias por tu compra!!</h5>
-          <h5 className="text-center">
-            Te enviamos un correo para con los pasos para finalizar tu compra.
+          <h5 className="text-center mt-5">
+            Te enviamos un correo con la información para finalizar tu compra.
           </h5>
+          <h5 className="text-center">Gracias!!</h5>
           <div className="text-center mt-5">
             <Link to={"/"}>
               <button className="btn btn-success">Volver al inicio</button>
