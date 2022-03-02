@@ -19,7 +19,7 @@ function Form() {
 
   function handleClick() {
     const dataBase = getFirestore();
-     
+
     if (cart.length > 0) {
       if (
         nameRef.current.value &&
@@ -28,9 +28,9 @@ function Form() {
         stateRef.current.value &&
         mobileRef.current.value
       ) {
-        if(
-          emailRef.current.value.indexOf('@') !== -1 && 
-          emailRef.current.value.indexOf('.') !== -1
+        if (
+          emailRef.current.value.indexOf("@") !== -1 &&
+          emailRef.current.value.indexOf(".") !== -1
         ) {
           const orders = dataBase.collection("orders");
 
@@ -52,21 +52,30 @@ function Form() {
             .add(OC)
             .then(({ id }) => {
               setOrderId(id);
-              console.log(`Ingreso la OC: ${id}`);
               ReStock(dataBase);
               ClearCart();
             })
             .catch((err) => {
               console.log(err);
             });
-        } else{
-          Alerts("warning", "Upss", 'El correo ingresado no es valido', 4000);
+        } else {
+          Alerts("warning", "Upss", "El correo ingresado no es valido", 4000);
         }
-      } else{
-        Alerts("error", "Upss", "Te falta completar campos del formulario", 4000);
+      } else {
+        Alerts(
+          "error",
+          "Upss",
+          "Te falta completar campos del formulario",
+          4000
+        );
       }
-    } else{
-      Alerts("warning", "Upss", "El carrito esta vacio, debes comprar algo!!", 4000);
+    } else {
+      Alerts(
+        "warning",
+        "Upss",
+        "El carrito esta vacio, debes comprar algo!!",
+        4000
+      );
     }
   }
 
@@ -95,13 +104,11 @@ function Form() {
             </svg>
           </div>
           <h2 className="text-center mt-3">Reserva Exitosa!</h2>
-          <div style={{color:'green'}}>  
+          <div style={{ color: "green" }}>
             <h3 className="text-center mt-5">Orden N°</h3>
             <h3 className="text-center">"{orderId}"</h3>
           </div>
-          <h5 className="text-center mt-5 ">
-            Gracias por tu compra!!
-          </h5>
+          <h5 className="text-center mt-5 ">Gracias por tu compra!!</h5>
           <h5 className="text-center">
             Te enviamos un correo para con los pasos para finalizar tu compra.
           </h5>
@@ -157,7 +164,7 @@ function Form() {
               Reservar compra!!
             </button>
           </div>
-        </>  
+        </>
       )}
     </>
   );

@@ -4,18 +4,18 @@ import Alerts from "../AuxElements/Alerts";
 import "./Count.css";
 
 const Count = ({ Item, CartUse }) => {
-  const { onAdd, setShow, isInCart, AddItem, SubstractItem, RemoveItem } = useContext(context);
+  const { onAdd, setShow, isInCart, AddItem, SubstractItem, RemoveItem } =
+    useContext(context);
 
   const view = isInCart(Item) ? false : true;
 
   const [contador, setContador] = useState(Item.inicial);
 
   const ClickAdd = () => {
-    let msj = () => Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
+    let msj = () =>
+      Alerts("warning", "Upss", "Limite de stock para este articulo", 2000);
     if (isInCart(Item)) {
-      Item.stock > isInCart(Item).cantidad 
-      ? AddItem(Item) 
-      : msj();
+      Item.stock > isInCart(Item).cantidad ? AddItem(Item) : msj();
     } else {
       if (contador < Item.stock) {
         setContador(contador + 1);
@@ -27,7 +27,8 @@ const Count = ({ Item, CartUse }) => {
   };
 
   const ClickSubtract = () => {
-    let msj = (e) => Alerts("warning","Upss",`No puedes comprar menos de ${e} articulo`,2000);
+    let msj = (e) =>
+      Alerts("warning","Upss",`No puedes comprar menos de ${e} articulo`,2000);
     if (isInCart(Item)) {
       isInCart(Item).cantidad > Item.inicial
         ? SubstractItem(Item)
@@ -56,7 +57,8 @@ const Count = ({ Item, CartUse }) => {
 
   const ClickDelete = () => RemoveItem(Item);
 
-  const disabledButton = Item.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
+  const disabledButton =
+    Item.stock <= 0 ? "disabled btn btn-success" : "btn btn-success";
 
   const handleShow = () => setShow(true);
 
@@ -72,7 +74,10 @@ const Count = ({ Item, CartUse }) => {
         </button>
       </div>
       {CartUse === true ? (
-        <button onClick={ClickDelete} className="text-danger btn btn-danger w-50">
+        <button
+          onClick={ClickDelete}
+          className="text-danger btn btn-danger w-50"
+        >
           Quitar
         </button>
       ) : view ? (
