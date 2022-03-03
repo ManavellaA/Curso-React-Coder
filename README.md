@@ -12,7 +12,7 @@ Utiliza el Hook 'Context' el cual contiene las funcionalidades criticas dentro d
 mismo (manejo de estados globales, calculos del carro de compras y funcionalidades que 
 iteractuan con la Base de Datos).
 
-![Demo](https://media4.giphy.com/media/Zv0MczebiYoMSPRR3K/giphy.gif?cid=790b761122fb5da80b4462048ab1469490c6b2b4b58b9590&rid=giphy.gif&ct=g)
+![Demo](https://media2.giphy.com/media/FCSfcuOeXCeoX4sIFn/giphy.gif?cid=790b761142a15c58876c2bcaa39e8eabe15c675e0e4daea8&rid=giphy.gif&ct=g)
 
 ## Deploy actual de la Pagina (Netlify) 
 [Ayelen Galvan DM](https://ayelengalvan.netlify.app)
