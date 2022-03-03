@@ -12,7 +12,7 @@ const ItemList = (props) => {
           ))}
         </div>
       ) : (
-        <Loading />
+        <Loading msj={'....Cargando....'} />
       )}
     </>
   );

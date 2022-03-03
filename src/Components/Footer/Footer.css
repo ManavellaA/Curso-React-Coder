@@ -3,7 +3,7 @@
 .div__footer {
     margin: 18em 0 0 0 ;
     height:12vh; 
-    background-color:rgba(248, 141, 70, 0.268);
+    background-color: rgba(250, 235, 215, 0.645);
     display:grid;
     grid-template-columns:1fr auto auto 1fr;
     grid-template-rows:1fr 1fr 1fr;
@@ -43,20 +43,20 @@
 }
 
 .pinterest :hover{
-    color: black;
+    color:rgba(0, 0, 0, 0.583);
     border-radius: 1em;
     animation: pulse 1s infinite;
 }
 
 .instagram :hover{
-    color: black;
+    color:rgba(0, 0, 0, 0.583);
     border-radius: 0.6em;
     animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
     0% {
-        box-shadow: black 0 0 0 0;
+        box-shadow: rgba(0, 0, 0, 0.583) 0 0 0 0;
     }
     75% {
         box-shadow: rgba(0, 0, 0, 0) 0 0 0 0.8em;

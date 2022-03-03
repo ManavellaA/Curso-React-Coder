@@ -4,11 +4,14 @@ import firebase from "firebase";
 import { getFirestore } from "../FireBase/Firebase";
 import { context } from "./CartContext";
 import Alerts from "../AuxElements/Alerts";
+import Loading from "../AuxElements/Loading";
 
 function Form() {
   const { cart, clearCart, total, reStock } = useContext(context);
 
   const [orderId, setOrderId] = useState("");
+
+  const [Load, setLoad] = useState(true);
 
   const nameRef = useRef();
   const addressRef = useRef();
@@ -18,6 +21,8 @@ function Form() {
   const mobileRef = useRef();
 
   function handleClick() {
+    setLoad(false);
+    
     const dataBase = getFirestore();
 
     if (cart.length > 0) {
@@ -118,7 +123,7 @@ function Form() {
             </Link>
           </div>
         </div>
-      ) : (
+      ) : ( Load ? (
         <>
           <h2 className="text-center mt-5">Datos de la Compra</h2>
           <div className=" mt-5 flex-wrap container col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3">
@@ -165,6 +170,9 @@ function Form() {
             </button>
           </div>
         </>
+      ) : (
+        <Loading msj={'....Enviando....'} />
+        )
       )}
     </>
   );

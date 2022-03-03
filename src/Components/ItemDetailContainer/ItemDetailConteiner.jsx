@@ -28,7 +28,7 @@ const ItemDetailConteiner = () => {
   return (
     <>
       {getItem.length === 0 ? (
-        <Loading />
+        <Loading msj={'....Cargando....'} />
       ) : (
         <div className="d-flex justify-content-center mt-5">
           <ItemDetail Item={getItem} />

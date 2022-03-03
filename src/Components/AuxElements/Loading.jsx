@@ -1,10 +1,10 @@
 import React from 'react'
 import './Loading.css'
-const Loading = () => {
+const Loading = ({msj}) => {
   return (
     <div className="loading show row">
         <div className="spin"></div>
-        <h3 className="text-center mt-4 text-secondary" >.....Cargando.....</h3>
+        <h3 className="text-center mt-4 text-secondary" >{msj}</h3>
     </div>
   )
 }
