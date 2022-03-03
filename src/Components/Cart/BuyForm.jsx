@@ -11,7 +11,7 @@ function Form() {
 
   const [orderId, setOrderId] = useState("");
 
-  const [Load, setLoad] = useState(true);
+  const [load, setLoad] = useState(true);
 
   const nameRef = useRef();
   const addressRef = useRef();
@@ -21,10 +21,6 @@ function Form() {
   const mobileRef = useRef();
 
   function handleClick() {
-    setLoad(false);
-    
-    const dataBase = getFirestore();
-
     if (cart.length > 0) {
       if (
         nameRef.current.value &&
@@ -37,6 +33,8 @@ function Form() {
           emailRef.current.value.indexOf("@") !== -1 &&
           emailRef.current.value.indexOf(".") !== -1
         ) {
+          setLoad(false);
+          const dataBase = getFirestore();
           const orders = dataBase.collection("orders");
 
           const OC = {
@@ -67,20 +65,10 @@ function Form() {
           Alerts("warning", "Upss", "El correo ingresado no es valido", 4000);
         }
       } else {
-        Alerts(
-          "error",
-          "Upss",
-          "Te falta completar campos del formulario",
-          4000
-        );
+        Alerts("error","Upss","Te falta completar campos del formulario",4000);
       }
     } else {
-      Alerts(
-        "warning",
-        "Upss",
-        "El carrito esta vacio, debes comprar algo!!",
-        4000
-      );
+      Alerts("warning","Upss","El carrito esta vacio, debes comprar algo!!",4000);
     }
   }
 
@@ -123,7 +111,7 @@ function Form() {
             </Link>
           </div>
         </div>
-      ) : ( Load ? (
+      ) : load ? (
         <>
           <h2 className="text-center mt-5">Datos de la Compra</h2>
           <div className=" mt-5 flex-wrap container col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3">
@@ -171,8 +159,7 @@ function Form() {
           </div>
         </>
       ) : (
-        <Loading msj={'....Enviando....'} />
-        )
+        <Loading msj={"....Enviando...."} />
       )}
     </>
   );
