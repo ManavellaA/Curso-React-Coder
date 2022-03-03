@@ -2,7 +2,7 @@
 
 .div__footer {
     margin: 18em 0 0 0 ;
-    height:12vh; 
+    height:7rem; 
     background-color: rgba(250, 235, 215, 0.645);
     display:grid;
     grid-template-columns:1fr auto auto 1fr;
